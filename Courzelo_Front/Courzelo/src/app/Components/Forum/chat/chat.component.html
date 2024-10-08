@@ -1,0 +1,257 @@
+<!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box page-title-box-alt">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+
+                                <button *ngIf="approved == false && roles.includes('Student') " type="button" class="btn btn-success waves-effect waves-light  mark-done-btn" (click)="ApprouvedExolication()">
+                                    Approved <span class="btn-label-right"><i class="mdi mdi-check-all"></i></span>
+                                  </button>
+                                <i *ngIf="isDone" class="fas fa-check-circle done-icon"></i>
+
+                            </ol>
+
+                        </div>
+
+                        <h4 class="page-title">Chat</h4>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+
+            <div class="row">
+
+                <div class="col-xl-3 col-lg-4">
+                    <div class="card chat-list-card mb-xl-0">
+                        <div class="card-body">
+
+                            <div class="d-flex">
+                                <div class="me-2 align-self-center">
+                                    <img src="../assets/images/users/user-1.jpg" alt="" class="flex-shrink-0 rounded-circle avatar-sm">
+                                </div>
+                                <div class="flex-grow-1">
+
+                                    <h5 *ngIf="idq==userStorage" class="mt-0 mb-1">{{username}}</h5>
+                                    <h5 *ngIf="idq!=userStorage" class="mt-0 mb-1 text-truncate">{{username}}</h5>
+
+                                    <p class="font-13 text-muted mb-0"> Student</p>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-3">
+
+                            <div class="search-box chat-search-box">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <i class="mdi mdi-magnify search-icon"></i>
+                            </div>
+
+                            <hr class="my-3">
+
+                            <div *ngFor="let chattt of chatList" class="">
+                                <ul class="list-unstyled chat-list mb-0" style="max-height: 413px;" data-simplebar>
+                                    <li class="active">
+                                        <!--je vais la faire ave ngIf si le session user a le meme userid que sener onva passer chat.reciever et laakes-->
+                                        <a (click)="getChatBy2Users(chattt.receiver.id)" (click)="getChatBy2UsersOpp(chattt.sender.id)">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 chat-user-img active align-self-center me-2">
+                                                    <img src="../assets/images/users/user-2.jpg" class="rounded-circle avatar-sm" alt="">
+                                                </div>
+
+                                                <div class="flex-grow-1 overflow-hidden">
+
+
+                                                    <h5 *ngIf="username==chattt.receiver.username" class="text-truncate font-14 mt-0 mb-1">{{chattt.sender.username}}</h5>
+                                                    <h5 *ngIf="username==chattt.sender.username" class="text-truncate font-14 mt-0 mb-1">{{chattt.receiver.username}}</h5>
+
+                                                    <p class="text-truncate mb-0">I've finished it! See you so...</p>
+                                                </div>
+                                                <div class="font-11">05 min</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="conversation-list-card card">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="flex-grow-1">
+                                    <h5 *ngIf="username!=reeiver1" class="mt-0 mb-1 text-truncate">{{reeiver1}}</h5>
+                                    <h5 *ngIf="username!=sender1" class="mt-0 mb-1 text-truncate">{{sender1}}</h5>
+                                    <p class="font-13 text-muted mb-0"><i class="mdi mdi-circle text-success me-1 font-11"></i> Active</p>
+                                </div>
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle arrow-none card-drop font-20" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Action</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+                                        <div class="dropdown-divider"></div>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-3">
+
+                            <div class="card-body msg_card_body">
+                                <ul #scrollMe [scrollTop]="scrollMe.scrollHeight" class="conversation-list" style="max-height: 410px; overflow-y: auto;">
+
+                                    <li>
+                                        <div *ngFor="let chatt of messageList " class="message-list">
+                                            <!--juste je vais changer ça aprés avoir la session #}-->
+                                            <li [ngClass]="{'odd': sender1 === chatt.sendermessage, 'even': sender1 !== chatt.sendermessage}">
+
+                                                <div class="chat-avatar">
+                                                    <img src="../assets/images/users/user-2.jpg" alt="">
+                                                </div>
+                                                <div *ngIf="chatt?.replymessage" class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <span class="user-name">{{chatt.sendermessage}}</span>
+                                                        <p>
+                                                            {{chatt.replymessage }}
+                                                        </p>
+
+                                                        <mat-icon (click)="speak(chatt.replymessage , this.sourceLanguage)" color="accent" class="icon" style="font-size: 18px;">volume_up</mat-icon>
+
+
+                                                    </div>
+                                                    <span class="time">{{chatt.time| date : "h:mm a" }}</span>
+
+
+                                                </div>
+                                                <p><span class="bold-word"></span></p>
+                                                <div *ngIf="chatt?.replyMedia" class="conversation-text">
+                                                    <div class="ctext-wrap">
+                                                        <span class="user-name">{{chatt.sendermessage}}</span>
+                                                        <p> <img [src]='getMediaUri3(chatt.replyMedia)' class="media-img" alt="Media"> </p>
+
+                                                    </div>
+
+                                                    <span class="time">{{ chatt.time | date : "h:mm a" }}</span>
+                                                </div>
+
+                                                <p><span class="bold-word"></span></p>
+
+
+                                        </div>
+
+
+
+                                        </li>
+
+
+
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="p-3 conversation-input border-top">
+                            <form [formGroup]="chatForm">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="position-relative">
+                                            <textarea name="replymessage" id="ta" class="form-control type_msg" matInput placeholder="Type your message..." formControlName="replymessage" (keyup.enter)="sendMessage()" style="resize: none"></textarea>
+
+                                            <ul class="nav nav-pills profile-pills mt-1">
+                                                <li>
+
+                                                    <button mat-raised-button class="input-group-text send_btn" (click)="sendMessage()">
+                                                        <i class="fa fa-location-arrow"></i>
+                                                      </button>
+
+                                                </li>
+                                                <br>
+                                                <div class="input-icons">
+                                                    <div class="mic-container">
+                                                        <button mat-icon-button (click)="voiceInput()">
+                                                        <mat-icon color="primary" class="icon">mic</mat-icon>
+                                                      </button>
+                                                        <ng-container *ngIf="this.recognition.isListening">
+                                                            <mat-progress-bar class="progress-bar" mode="indeterminate"></mat-progress-bar>
+                                                        </ng-container>
+                                                    </div>
+
+                                                </div>
+                                                <li>
+
+
+                                                    <input type="file" id="img" style="display: none" accept="image/*" #file (change)="sendMedia($event)" />
+                                                    <button for="img" mat-raised-button type="button" class="input-group-text send_btn upload_pic_button" (click)="file.click()">
+                                                      <i class="fa fa-camera" for="img"></i>
+                                                    </button>
+                                                </li>
+                                            </ul>
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- container -->
+
+    </div>
+    <!-- content -->
+
+
+
+</div>
+
+<!-- ============================================================== -->
+<!-- End Page content -->
+<!-- ============================================================== -->

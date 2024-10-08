@@ -1,0 +1,46 @@
+.container[_ngcontent-oxc-c16] {
+    max-width: 600px;
+    margin: 150px auto;
+    padding: 63px;
+    border: #1e5d95;
+  }
+  
+  .text-info {
+    color: #17a2b8; /* Bootstrap primary color, adjust as needed */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .table {
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .center-msg {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  
+  p {
+    margin-top: 99px;
+    margin-bottom: 1rem;
+    margin-left: 140px;
+  }
+  .table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #2d7fd1;
+  }
+  
+  th {
+    font-weight: 700;
+    color: royalblue;
+  }
+  .form-group[_ngcontent-fdo-c16] {
+    margin-bottom: 29px;
+    margin: 204px;
+  }
+  label {
+    display: inline-block;
+    margin: 54px;
+  }

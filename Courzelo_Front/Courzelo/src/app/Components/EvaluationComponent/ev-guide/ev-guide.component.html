@@ -1,0 +1,147 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="content-page">
+    <div class="content">
+
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box page-title-box-alt">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">welcome</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">explanation</a></li>
+                                <li class="breadcrumb-item active">Evaluation guide</li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Evaluation guide page </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="timeline">
+                        <article class="timeline-item alt">
+                            <div class="time-show first">
+                                <a routerLink="/grades" class="btn btn-primary width-lg">see your modules
+                                    evaluations</a>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon bg-danger"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-danger mt-0">Test formula</h4>
+                                        <p class="timeline-date text-muted"><small>Calculate test grade </small></p>
+                                        <div class="formula-description">
+                                            <p>
+                                                A provided formula is used to calculate the test grade for each student
+                                                in the final/quiz test class based on their performance in both the
+                                                final test and quiz test components:
+                                            </p>
+                                            <ul>
+                                                <li>N: number of questions = 10</li>
+                                                <li>C: number of correct answers</li>
+                                                <li>w: weight assigned to each question = 2</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item ">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-success"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-success mt-0">Module average</h4>
+                                        <p class="timeline-date text-muted"><small>Calculate the module
+                                                evaluation.</small></p>
+                                        <p>
+                                            a provided formula to calculate the module average based on the attendance
+                                            grade, quiz test grade, and final test grade </p>
+                                        <ul>
+                                            <li>F be the score achieved in the final test.</li>
+                                            <li>Q be the score achieved in the quiz test.</li>
+                                            <li> be the score achieved by attendance.</li>
+                                            <li> wF​ be the weight assigned to the final test = 60%</li>
+                                            <li> wQ be the weight assigned to the quiz test =40%</li>
+                                            <li> G=(F×wF)+(Q×wQ)</li>
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon bg-primary"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-primary mt-0">Final evaluation</h4>
+                                        <p class="timeline-date text-muted"><small>Calculate the final
+                                                evaluation.</small></p>
+                                        <p> A provided formula is used to calculate the overall average grade for each
+                                            student based on their module averages :
+                                        <ul>
+                                            <li>F be the coeffecient of all modules.</li>
+                                            <li>Qi be the module grade of each module.</li>
+                                            <li> G=Qi/F</li>
+
+
+                                        </ul>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-purple"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-purple mt-0">the deliberation of the module grades</h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>when a student submits his test he can immediately see his grades in module
+                                            grades.
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item alt">
+                            <div class="time-show first">
+                                <a routerLink="/finalGrade" class="btn btn-primary width-lg">see your final
+                                    evaluations</a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+            <!-- end row -->
+
+
+        </div>
+        <!-- container -->
+
+    </div>
+    <!-- content -->
+
+
+
+</div>
+<router-outlet></router-outlet>

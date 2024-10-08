@@ -1,0 +1,43 @@
+
+.update-module-container {
+    max-width: 400px;
+    margin: 140px ; /* Adjust the margin to your preference */
+    padding: 40px; /* Adjust the padding to your preference */
+    border: 15px  solid #ccc;
+    border-radius: 64px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+    .update-module-form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      font-weight: bold;
+    }
+    
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    
+    .update-module-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .update-module-button:hover {
+      background-color: #45a049;
+    }
+    

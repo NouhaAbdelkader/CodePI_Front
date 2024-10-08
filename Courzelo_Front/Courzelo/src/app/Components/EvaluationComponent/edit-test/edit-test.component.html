@@ -1,0 +1,94 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Wizard</title>
+    <!-- Inclure vos styles CSS ici -->
+  
+</head>
+<body>
+    <!-- Popup pour l'édition du test -->
+    <div class="overlay">
+        <div class="modal-container">
+          <div class="modal-header bg-primary text-white d-flex justify-content-center align-items-center">
+            <h5 class="modal-title">Edit Test</h5>
+            <button type="button" class="btn-close" (click)="closeDialog()" aria-label="Close"></button>
+        </div>
+        
+            <div class="modal-body">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <form (ngSubmit)="editTest()" #editForm="ngForm">
+                            <!-- Champs de saisie pour le nom, la description, la date, la durée et le type -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" [(ngModel)]="data.name" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description:</label>
+                                <textarea id="description" name="description" [(ngModel)]="data.description" class="form-control form-control-lg" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Date:</label>
+                                <input type="date" id="date" name="date" [(ngModel)]="data.date" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="duration" class="form-label">Duration (minutes):</label>
+                                <input type="number" id="duration" name="duration" [(ngModel)]="data.duration" class="form-control form-control-lg" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="type" class="form-label">Type :</label>
+                              <select id="type" name="type" [(ngModel)]="data.type" class="form-select form-select-lg" required>
+                                  <option value="FinalTest">Final Test</option>
+                                  <option value="QuizTest">Quiz Test</option>
+                                  <option value="RevisionTest">Revision Test</option>
+                                  <!-- Ajoutez d'autres options au besoin -->
+                              </select>
+                          </div>
+                            <!-- Section pour éditer les questions -->
+                            <hr>
+                            <h4 class="header-title mb-3">Edit Questions</h4>
+                            <ng-container *ngFor="let question of data.questions; let i = index">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Question {{ i + 1 }}</h5>
+                                        <!-- Champ de saisie pour la description de la question -->
+                                        <div class="mb-3">
+                                            <label for="question{{ i }}" class="form-label">Question Description</label>
+                                            <textarea class="form-control" id="question{{ i }}" name="question{{ i }}" [(ngModel)]="question.description"></textarea>
+                                        </div>
+                                        <!-- Champ de saisie pour les réponses -->
+                                        <div class="mb-3" *ngFor="let answer of question.answers; let j = index">
+                                            <label for="answer{{ i }}{{ j }}" class="form-label"> {{ answer.name  }}</label>
+                                            <input type="text" class="form-control" [id]="'answer' + (i + 1) + (j + 1)" [name]="'answer' + (i + 1) + (j + 1)" [(ngModel)]="answer.description" required>
+                                        </div>
+                                        <!-- Sélection de la réponse correcte -->
+                                        <div class="mb-3">
+                                            <label for="correctAnswer{{ i }}" class="form-label">Correct Answer</label>
+                                            <select class="form-select" [id]="'correctAnswer' + (i + 1)" [name]="'correctAnswer' + (i + 1)" [(ngModel)]="question.correctAnswer" required>
+                                                <option *ngFor="let answer of question.answers" [value]="answer.name">{{ answer.name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <!-- Fin de la section pour éditer les questions -->
+
+                            <!-- Boutons de soumission et d'annulation -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" (click)="closeDialog()">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure vos autres éléments HTML ici -->
+</body>
+</html>

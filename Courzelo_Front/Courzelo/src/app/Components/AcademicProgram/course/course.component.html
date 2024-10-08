@@ -1,0 +1,46 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="all-tests-container">
+  <div class="container-fluid">
+<div class="my-form" [formGroup]="courseForm">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">course Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{'is-invalid': courseForm.get('name')?.invalid && courseForm.get('name')?.touched}" />
+        <div *ngIf="courseForm.get('name')?.invalid && courseForm.get('name')?.touched" class="invalid-feedback">
+          Class Name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description" [ngClass]="{'is-invalid': courseForm.get('description')?.invalid && courseForm.get('description')?.touched}" />
+        <div *ngIf="courseForm.get('description')?.invalid && courseForm.get('description')?.touched" class="invalid-feedback">
+          Description is required
+        </div>
+      </div>
+
+          <div class="form-group">
+              <label for="id">Select module:</label>
+              <select
+                id="id"
+                formControlName="id"
+                class="form-control"
+               
+              >
+                <option value="" disabled selected>Select module</option>
+                <option *ngFor="let module of modules" [value]="module.id">
+                  {{ module.name }}
+                </option>
+              </select>
+        <div *ngIf="courseForm.get('module')?.invalid && courseForm.get('id')?.touched" class="invalid-feedback">
+          Please select a module
+        </div >
+        <button (click)="saveCourse()" class="btn btn-success">Submit</button>
+      </div>
+    
+      <div *ngIf="submitted">
+        <h4>You submitted successfully!</h4>
+      </div>
+  </div>
+</div>  </div>

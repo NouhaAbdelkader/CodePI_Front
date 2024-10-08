@@ -1,0 +1,29 @@
+/* styles.css */
+
+/* Sidebar styles */
+.app-nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: white;
+  padding: 150px 200px; /* Augmenter le padding pour plus d'espace */
+  z-index: 1000; /* Assurer que la barre de navigation est au-dessus de tout */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajouter une ombre subtile pour le style */
+}
+  
+  /* Main content styles */
+  .take-test-container {
+    padding: 300px; /* Ajuster l'espacement interne du contenu */
+    margin-right: auto; 
+    width: 100%; /* Assurer que le contenu occupe toute la largeur de l'écran */
+
+  }
+  
+  /* Ajustez la couleur de fond du contenu principal */
+  .container {
+    padding-top: 100px; /* Ajuster la valeur pour laisser plus d'espace en haut */
+    background-color: #f4f4f4; /* Ajustez la couleur selon vos besoins */
+    padding-bottom: 140px; /* Ajuster la valeur pour laisser plus d'espace en haut */
+
+}

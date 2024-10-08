@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="box">
+<div class="popup">
+    <div class="popup-content">
+      <h2>Update Project</h2>
+      <a class="close" href="#">&times;</a>
+      <form (ngSubmit)="updateProject()">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" [(ngModel)]="updatedProject.name" name="name" required>
+        </div>
+        <div>
+          <label for="description">Description:</label>
+          <textarea id="description" [(ngModel)]="updatedProject.description" name="description" required></textarea>
+        </div>
+        <div>
+          <label for="difficulty">Difficulty:</label>
+          <select class="form-control" [(ngModel)]="updatedProject.difficulty" name="difficulty" required>
+            <option value="" disabled>Select Difficulty</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
+        <div>
+            <label for="number">NumberOfStudents:</label>
+            <input type="number" id="number" [(ngModel)]="updatedProject.number" name="number" required>
+          </div>
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+</div>

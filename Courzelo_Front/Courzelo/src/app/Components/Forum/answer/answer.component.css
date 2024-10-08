@@ -1,0 +1,33 @@
+.large-text {
+    font-size: 2em;
+    /* Ajustez cette valeur comme vous le souhaitez */
+}
+
+.icon i {
+    font-size: 1.5em;
+    /* Ajustez cette valeur comme vous le souhaitez */
+}
+
+.d-flexx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spaced {
+    margin: 0 20px;
+    /* Ajustez cette valeur comme vous le souhaitez */
+}
+
+.voted {
+    color: blue;
+}
+
+.icon-blue {
+    color: blue;
+}
+
+ngb-rating {
+    color: #FFC107;
+    font-size: 40px;
+}

@@ -1,0 +1,114 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box page-title-box-alt">
+                        <div class="d-flex justify-content-between">
+                            <div class="page-title-right mb-3">
+                                <div class="dropdown d-inline-block">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Group By
+                            <i class="mdi mdi-chevron-down"></i>
+                          </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li *ngFor="let module of listModule">
+                                            <a class="dropdown-item" (click)="getQuestionsForModule(module.id)">{{module.name}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown d-inline-block">
+                                    <button (click)=" getAllQuestionsRated()" class="btn btn-primary" type="button" id="ratingButton" style="margin-left: 10px;">
+                                        <i class="mdi mdi-star-four-points"></i> Sort by Rating
+                                      </button>
+                                </div>
+                                <div class="d-inline-block">
+                                    <form [formGroup]="searchForm" class="searchBar" (ngSubmit)="onSearchSubmit()">
+                                        <div class="input-group" style="position: relative;">
+                                            <input type="text" class="form-control" formControlName="searchValue" placeholder="Search..." style="margin-left: 225px; width: 500px; padding-right: 30px;">
+                                            <span class="icon fa fa-search" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--hhh -->
+
+
+
+
+                            </div>
+                            <div class="page-title-left mt-3">
+                                <a class="btn btn-primary btn-add-question" (click)="openModal(false)"><i class="mdi mdi-plus"></i> Add  </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- end page title -->
+
+
+            <div class="row">
+                <div *ngFor="let p of listQuestion, let i=index " class="col-sm-12">
+                    <div class="card">
+                        <div class="bg-picture card-body">
+                            <div class="d-flex align-items-top">
+                                <div class="avatar-md">
+                                    <span class="avatar-title rounded-circle" [ngStyle]="{'background-color': avatarColor}">
+                                        {{p.student.username.charAt(0).toUpperCase() }}
+                                    </span>
+                                </div>
+
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <h4 class="m-0">{{ p.student.username}}</h4>
+                                    <p class="text-muted"><i>{{p.date | date : "MMMM d, yyyy, h:mm a" }}</i></p>
+                                    <p class="font-16">{{p.title}}</p>
+
+                                    <div style="position: absolute; top: 0; right: 0;">
+                                        <ngb-rating [max]="5" [rate]="ratesAverage[p.id]" [readonly]="true"></ngb-rating>
+
+                                        <h2 style="margin-left: 50px; color: #FFC107;">{{ratesAverage[p.id]}}</h2>
+                                    </div>
+
+                                    <ul class="social-list list-inline mt-3 mb-0">
+                                        <li class="list-inline-item">
+                                            <a [routerLink]="['/forumAnswers',p.id]" class="social-list-item border-info text-info"><i class="fe-list"></i></a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript:void(0);" class="social-list-item border-secondary text-secondary">
+                                                <i class="mdi mdi-robot"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/ meta -->
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <!-- container -->
+
+    </div>
+    <!-- content -->
+
+    <!-- Footer Start -->
+
+    <!-- end Footer -->
+
+</div>
+<router-outlet></router-outlet>

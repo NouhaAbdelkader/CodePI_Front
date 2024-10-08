@@ -1,0 +1,34 @@
+<div class="my-form">
+    <div *ngIf="currentJobOffer">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" required [(ngModel)]="currentJobOffer.title"
+                name="title" />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input class="form-control" id="description" required [(ngModel)]="currentJobOffer.description"
+                name="description" />
+        </div>
+        <div class="form-group">
+            <label for="description">skills</label>
+            <input class="form-control" id="description" required [(ngModel)]="currentJobOffer.skills" name="skills" />
+        </div>
+        <div class="form-group">
+            <label for="description">speciality</label>
+            <input class="form-control" id="description" required [(ngModel)]="currentJobOffer.speciality"
+                name="speciality" />
+        </div>
+        <div class="form-group">
+            <label for="description">experience</label>
+            <input class="form-control" id="description" required [(ngModel)]="currentJobOffer.experience"
+                name="experience" />
+        </div>
+
+        <button [routerLink]="['/jobOffer']" (click)="updateJobOffer()" class="btn btn-success">Update</button>
+        <p>{{message}}</p>
+    </div>
+
+
+</div>

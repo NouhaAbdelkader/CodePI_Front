@@ -1,0 +1,16 @@
+.success-snackbar {
+    background-color: green;
+    color: white;
+  }
+  
+  .wrong-snackbar {
+    background-color: red;
+    color: white;
+  }
+  
+  .message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

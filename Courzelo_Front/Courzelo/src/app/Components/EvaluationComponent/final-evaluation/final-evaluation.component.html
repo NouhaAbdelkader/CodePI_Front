@@ -1,0 +1,83 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container-fluid">
+    <!-- Section pour les boutons -->
+    
+        <!-- Colonne pour le tableau des notes -->
+        <div class="col-md-6">
+            <div class="grades-container">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-primary">Module</th>
+                                <th class="text-primary">Coefficient</th>
+                                <th class="text-primary"> Module grade</th>
+                                <th class="text-primary"> Comments</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let evaluation of evaluations">
+                                <td>{{ evaluation.module.name }}</td>
+                                <td>{{ evaluation.module.coeff }}</td>
+                                <td>{{ evaluation.moduleAverage| number:'1.2-2' }}</td>
+                                <td>{{ evaluation.comments }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button class="btn btn-primary" (click)="printReport()">Print Report</button>
+            <button class="btn btn-secondary" (click)="downloadReport()">Download Report</button>
+        </div>
+        
+    <div class="card final-evaluation-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="header-content">
+                <i class="fas fa-graduation-cap"></i>
+                <h4 style="margin-left: 10px;">Final Evaluation</h4>
+            </div>
+            <!-- Avatar en haut à droite -->
+            <div class="avatar-md">
+                <span class="avatar-title rounded-circle" [ngStyle]="{'background-color': avatarColor}">
+                    {{ finalEvaluation.student.username.charAt(0).toUpperCase() }}
+                </span>
+            </div>
+        </div>
+        <div class="card-body">
+            <!-- Informations générales -->
+            <!-- Encadrés de l'évaluation finale -->
+
+            <div class="info-field">
+                <p><strong>First Name:</strong> {{ username }}</p>
+            </div>
+            <div class="info-field">
+                <p><strong>Gender:</strong> {{ finalEvaluation.student.sexe }}</p>
+            </div>
+            <div class="info-field">
+                <p><strong>Date of Birth:</strong> {{ finalEvaluation.student.dateOfBirth }}</p>
+            </div>
+            <div class="info-field">
+                <p><strong>Level:</strong> </p>
+            </div>
+            <div class="info-field">
+                <p><strong>Final Grade:</strong> {{ finalEvaluation.finalAverage | number:'1.2-2' }}</p>
+            </div>
+            <div class="info-field">
+                <p><strong>Honor:</strong> {{ finalEvaluation.honors }}</p>
+            </div>
+
+            <!-- Barre de progression stylisée -->
+            <div class="progress-bar-container">
+                <div class="progress-bar" [ngStyle]="{width: (finalEvaluation.finalAverage / 20 * 100) + '%'}"></div>
+            </div>
+
+            <!-- Tableau de bord d'évaluation détaillé -->
+            <div class="evaluation-dashboard">
+                <!-- Ajoutez vos sections détaillées ici -->
+            </div>
+        </div>
+    </div>
+</div>

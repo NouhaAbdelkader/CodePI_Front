@@ -1,0 +1,54 @@
+
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="update-module-container">
+    <h2>Update module</h2>
+  
+    <!-- Form to update level -->
+    <form (ngSubmit)="updatemodule()" class="update-module-form">
+      <!-- Fields for updating the level, excluding the id field -->
+      <div class="form-group">
+        <label for="name"> Name:</label>
+        <input *ngIf="currentmodule" type="text" id="name" name="name" [(ngModel)]="currentmodule.name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input *ngIf="currentmodule" type="text" id="description" name="description" [(ngModel)]="currentmodule.description" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nbHeurePerWeek">nbHeurePerWeek:</label>
+        <input *ngIf="currentmodule" type="text" id="nbHeurePerWeek" name="nbHeurePerWeek" [(ngModel)]="currentmodule.nbHeurePerWeek" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nbHeureTotal">nbHeureTotal:</label>
+        <input *ngIf="currentmodule" type="text" id="nbHeureTotal" name="nbHeureTotal" [(ngModel)]="currentmodule.nbHeureTotal" required>
+      </div>
+
+      <div class="form-group">
+        <label for="couef">couef:</label>
+        <input *ngIf="currentmodule" type="text" id="couef" name="couef" [(ngModel)]="currentmodule.couef" required>
+      </div>
+
+      <div class="form-group" *ngIf="currentmodule">
+        <label for="Semestre">Semestre:</label>
+        <select id="Semestre" name="Semestre" [(ngModel)]="currentmodule.semestre" required>
+          <option *ngFor="let semestre of semestreValues" [value]="semestre">{{ semestre }}</option>
+        </select>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="classes">Classes:</label>
+        <select id="classes" name="classes" multiple [(ngModel)]="currentmodule.classes" required>
+          <option *ngFor="let classItem of classes" [ngValue]="classItem">{{ classItem.name }}</option>
+        </select>
+      </div>
+
+  
+      <!-- Submit button -->
+      <button class="update-module-button" type="submit">Update module</button>
+    </form>
+</div>

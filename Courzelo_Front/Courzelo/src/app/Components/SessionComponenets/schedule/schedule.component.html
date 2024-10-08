@@ -1,0 +1,57 @@
+<app-side-bar></app-side-bar>
+<div class="all-tests-container">
+    <div class="container-fluid">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            
+            <!-- start page title -->
+            <div class="row">
+                
+            <div class="col-12">
+            <div class="page-title-box page-title-box-alt">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Adminto</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Apps</a></li>
+                    <li class="breadcrumb-item active">Calendar</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Calendar</h4>
+            </div>
+            </div>
+
+            </div><!--end page title-->
+            <div class="row">
+                <div class="col-12">
+                            <div class="row">
+                                
+
+                                <div class="col-lg-9">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                            <div id="angular-calendar">
+                                                <div id="cal_buttons">
+                                                    <button class="external-event bg-purple" id="previous" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view">Prev</button>
+                                                    <button class="external-event bg-purple" id="today" mwlCalendarToday [(viewDate)]="viewDate">Today</button>
+                                                    <button class="external-event bg-purple" id="next" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view">Next</button>
+                                                </div>
+                                                <mwl-calendar-week-view [viewDate]="viewDate" [events]="events" ></mwl-calendar-week-view>
+                                            </div>
+
+                                        </div> <!-- end card body-->
+                                    </div> <!-- end card -->
+                                </div> <!-- end col -->
+
+                            </div>  <!-- end row -->
+                       
+
+                    
+                </div>
+                <!-- end col-12 -->
+            </div>     
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+</div>

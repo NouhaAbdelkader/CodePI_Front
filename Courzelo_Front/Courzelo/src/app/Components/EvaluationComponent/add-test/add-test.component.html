@@ -1,0 +1,100 @@
+
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Wizard</title>
+</head>
+<body>
+    <div class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl">
+                 <!-- add-test.component.html -->
+                 <h4 class="header-title mb-3">Add new Test</h4>
+
+<div class="card full-width">
+
+    <div class="card-body">
+        <form (ngSubmit)="saveTest()">
+          <div class="mb-3" [ngClass]="{'has-error': !nameValid}">
+            <div class="mb-3" [class.has-error]="!nameValid">
+                <label for="testName" class="form-label">Test Name</label>
+                <input type="text" class="form-control" id="testName" name="testName" [(ngModel)]="newTest.name" required>
+                <div *ngIf="!nameValid" class="text-danger">Test name is required.</div>
+            </div>
+            <div class="mb-3">
+                <label for="testDescription" class="form-label">Test Description</label>
+                <textarea class="form-control" id="testDescription" name="testDescription" [(ngModel)]="newTest.description" rows="3"></textarea>
+                <div *ngIf="!descriptionValid" class="text-danger">Test description is required.</div>
+
+            </div>
+            <div class="mb-3">
+                <label for="testDate" class="form-label">Test Date</label>
+                <input type="date" class="form-control" id="testDate" name="testDate" [(ngModel)]="newTest.date" required>
+                <div *ngIf="!dateValid" class="text-danger">Test date is required.</div>
+
+            </div>
+
+            <div class="mb-3">
+                <label for="testDuration" class="form-label">Test Duration (minutes)</label>
+                <input type="number" class="form-control" id="testDuration" name="testDuration" [(ngModel)]="newTest.duration" required>
+                    <span *ngIf="!durationValid" class="text-danger">Test Duration must be greater than 15.</span>
+
+            </div>
+            <div class="mb-3">
+                <label for="testType" class="form-label">Test Type</label>
+                <select class="form-select" id="testType" name="testType" [(ngModel)]="newTest.type" required>
+                    <option value="FinalTest">Final Test</option>
+                    <option value="QuizTest">Quiz Test</option>
+                    <option value="RevisionTest">Revision Test</option>
+                </select>
+                <div *ngIf="!typeValid" class="text-danger">Test type is required</div>
+
+            </div>
+            <button type="button" class="btn btn-generate-custom" (click)="generateTestQuestions()" [disabled]="isGenerateButtonClicked">Generate Questions</button>
+            <hr>
+            <!-- Boucle sur les questions générées -->
+            <ng-container *ngFor="let question of testQuestions; let i = index">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h4 class="header-title mb-3">Question n° {{ i + 1 }} :</h4>
+                        <div class="mb-3">
+                            <label for="description{{ i }}" class="form-label">Description</label>
+                            <textarea class="form-control" id="description{{ i }}" name="description{{ i }}" rows="3" [(ngModel)]="question.description" required></textarea>
+                            <span *ngIf="!question.description" class="text-danger">Question is required.</span>
+                        </div>
+                        <div class="mb-3" *ngFor="let answer of question.answers; let j = index">
+                            <label for="answer{{ i }}{{ j }}" class="form-label">{{ answer.name }}</label>
+                            <input type="text" class="form-control" [id]="'answer' + (i + 1) + (j + 1)" [name]="'answer' + (i + 1) + (j + 1)" [(ngModel)]="answer.description" required>
+                            <span *ngIf="!answer.description" class="text-danger">Answer {{ answer.name }} is required.</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correctAnswer{{ i }}" class="form-label">Correct Answer</label>
+                            <select class="form-select" [id]="'correctAnswer' + (i + 1)" [name]="'correctAnswer' + (i + 1)" [(ngModel)]="question.correctAnswer" required>
+                                <option *ngFor="let answer of question.answers" [value]="answer.name">{{ answer.name }}</option>
+                            </select>
+                            <span *ngIf="!question.correctAnswer" class="text-danger">Correct answer is required.</span>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+            
+            <!-- Fin de la section dynamique -->
+            <button type="submit" class="btn btn-success-custom">Save Test</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+

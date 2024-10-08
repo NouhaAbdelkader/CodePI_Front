@@ -1,0 +1,21 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="all-tests-container">
+  <div class="container-fluid">
+<div class="my-form" [formGroup]="levelForm">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{'is-invalid': levelForm.get('name')?.invalid && levelForm.get('name')?.touched}" />
+            <div *ngIf="levelForm.get('name')?.invalid && levelForm.get('name')?.touched" class="invalid-feedback">
+              Name is required
+            </div>
+          </div>
+  
+      <button (click)="saveLevel()" class="btn btn-success">Submit</button>
+    </div>
+  
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+    </div>
+</div>

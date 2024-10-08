@@ -1,0 +1,39 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+
+<div class="container mt-4">
+  <h2 class="text-info font-weight-bold mb-4">Modules for Class: {{ className }}</h2>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="classNameInput">Enter Class Name:</label>
+        <input id="classNameInput" class="form-control" type="text" [(ngModel)]="className" (change)="loadModules(className)" />
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="allModules.length > 0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Module Name</th>
+          <th>Description</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of allModules">
+          <td>{{ module.name }}</td>
+          <td>{{ module.description }}</td>
+          <td>{{ module.semestre }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="allModules.length === 0">
+    <p>No modules available for the selected class.</p>
+  </div>
+</div>
+

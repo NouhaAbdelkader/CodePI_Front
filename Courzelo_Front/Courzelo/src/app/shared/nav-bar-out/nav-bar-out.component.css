@@ -1,0 +1,216 @@
+.navbar {
+    font-size: 1rem;
+    background-color: #250f84; /* Adjust to match your brand color */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.container {
+    margin-top: 2rem; /* Space below the navbar */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #2d377e, #341897); /* A cool blue gradient */
+    color: #ffffff;
+}
+
+.navbar {
+    font-size: 1rem;
+    background-color: #341897; /* Adjust to match the blue gradient */
+    box-shadow: 0 2px 4px 0 rgb(255, 255, 255); /* Add a slight shadow to the navbar */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+.container {
+    margin-top: 2rem; /* Space below the navbar */
+}
+
+/* Additional styles for the main banner */
+.main-banner {
+    text-align: center;
+    padding: 4rem 0;
+    color: white;
+    background: linear-gradient(to right, #341897, #182848); /* A darker gradient for contrast */
+}
+
+.main-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.main-banner p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .main-banner p {
+        font-size: 1rem;
+    }
+}
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* A light background to keep things bright and airy */
+}
+
+.navbar {
+    font-size: 1rem;
+    background-color: #0b325b; /* A deep blue to contrast with the button colors */
+    box-shadow: 0 2px 4px rgb(253, 251, 251);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ddd;
+}
+
+/* Buttons for sign in and sign up to make them stand out */
+.btn-info, .btn-success {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Hover effect for buttons */
+.btn-info:hover, .btn-success:hover {
+    opacity: 0.9;
+}
+
+/* Banner styles */
+.main-banner {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #e9ecef; /* A subtle grey that won't compete with the navbar */
+    color: #ffffff;
+}
+
+.main-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-banner p {
+    font-size: 1rem;
+}
+
+/* Container margin */
+.container {
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .main-banner h1 {
+        font-size: 2rem;
+    }
+    
+    .main-banner p {
+        font-size: 0.9rem;
+    }
+
+    /* Stack the sign in and sign up buttons on smaller screens */
+    .navbar-nav.ml-auto {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .btn-info, .btn-success {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+/* This CSS is for additional styling, the .ml-auto class from Bootstrap takes care of right alignment */
+
+.nav-item {
+    /* Any additional styling for your nav items can go here */
+  }
+  
+  /* Example of additional styling, this is optional */
+  .nav-link {
+    color: #fff; /* White text color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .nav-link:hover {
+    color: #ccc; /* Lighter text color on hover */
+  }
+  
+  /* For the navbar brand image to ensure proper alignment */
+  .navbar-brand img.logo-light {
+    max-height: 60px; /* Adjust the size of the logo if needed */
+  }
+  
+  /* Ensures that nav items are aligned to the right and navbar doesn't collapse on larger screens */
+  @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+      flex-direction: row;
+    }
+    
+    .navbar-expand-lg .navbar-nav .nav-item {
+      margin-left: auto; /* This will push your nav items to the right */
+    }
+  }
+  .navbar-custom {
+    background-color: transparent !important;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px 0 rgb(255, 255, 255);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+  

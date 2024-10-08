@@ -1,0 +1,36 @@
+<div class="container" *ngIf="currentCandidancy">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <h2>Update Candidacy</h2>
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" id="description" [(ngModel)]="currentCandidancy.description"
+                        formControlName="description" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <input type="text" class="form-control" id="skills" [(ngModel)]="currentCandidancy.skills"
+                        formControlName="skills" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <input type="text" class="form-control" id="experience" [(ngModel)]="currentCandidancy.experience"
+                        formControlName="experience" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="resume">Resume</label>
+                    <input type="text" class="form-control" id="resume" [(ngModel)]="currentCandidancy.resume"
+                        formControlName="resume" required />
+                </div>
+                <button [routerLink]="['/candicancy']" (click)="updateCandidancy()" class="btn btn-success"
+                    [disabled]="form.invalid">Update</button>
+                <p>{{message}}</p>
+
+            </form>
+        </div>
+    </div>
+</div>

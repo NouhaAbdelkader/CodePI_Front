@@ -1,0 +1,53 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container">
+    <div class="card-container">
+<div class="container">
+
+    <div class="card-container">
+      <div class="row">
+        <h2 class="title">All Projects</h2>
+        
+        <!-- Loop through existing projects -->
+        <div class="col-md-4 mb-4" *ngFor="let project of project | async; let i=index">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ project.name }}</h5>
+              <p class="card-text">{{ project.project.description }}</p>
+              <p class="card-text">Difficulty: {{ project.project.difficulty }}</p>
+              <p class="card-text">Specialities: {{ project.project.specialities.join(', ') }}</p>
+             
+              <!-- "Show More" button -->
+              <div class="btn-group">
+                <button class="btn btn-outline-info" (click)="showMore(project)">Show More</button>
+               
+                <button type="button" class="btn btn-outline-success" [routerLink]="'/progress/' + selectedProject.id">Progress Dashboard</button>
+
+
+                
+              </div>
+            </div>
+          </div>
+           <!-- Add an empty column after every third card to create space -->
+           <div class="col-md-4 mb-4" *ngIf="i % 3 === 2"></div>
+           <!-- Add a line break after every third card to move to the next row -->
+           <div class="w-100" *ngIf="i % 3 === 2"></div>
+         
+        </div>
+        
+           <!-- FullCalendar component -->
+         
+          <div class="col-md-4">
+          <div class="fixed-right">
+            
+          <full-calendar #calendar [options]="calendarOptions" class="fixed-calendar"></full-calendar>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading projects...</p>
+  </ng-template>
+  

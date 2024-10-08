@@ -1,0 +1,156 @@
+.done-icon {
+    color: green;
+    /* Color of the done icon */
+    font-size: 1.5em;
+    /* Adjust the size of the icon */
+}
+
+.card ::-webkit-scrollbar {
+    width: 5px;
+}
+
+.msg_card_body {
+    overflow-y: auto;
+}
+
+.msg_card_body::-webkit-scrollbar {
+    width: 5px;
+}
+
+@media (max-width: 576px) {
+    .contacts_card {
+        margin-bottom: 15px !important;
+    }
+}
+
+.media-img {
+    max-height: 10rem;
+    max-width: 18rem;
+    border-radius: inherit;
+}
+
+.image-container {
+    width: 80px;
+    /* Définissez une largeur plus petite */
+    height: 80px;
+    /* Définissez une hauteur plus petite */
+    overflow: hidden;
+    /* Assurez-vous que l'image ne dépasse pas les dimensions du conteneur */
+    border: 1px solid #ccc;
+    /* Ajoutez une bordure pour le contour */
+}
+
+.image-container img {
+    width: 100%;
+    /* Assurez-vous que l'image occupe toute la largeur du conteneur */
+    height: auto;
+    /* Laissez la hauteur ajustée automatiquement pour conserver les proportions */
+}
+
+.position-relative {
+    position: relative;
+}
+
+.type_msg {
+    padding-right: 40px;
+    /* Réserve de l'espace pour les boutons */
+}
+
+.nav-pills {
+    position: absolute;
+    right: 10px;
+    /* Ajustez la position des boutons à droite */
+    bottom: 10px;
+    /* Ajustez la position des boutons au bas */
+}
+
+.position-relative {
+    position: relative;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.type_msg {
+    padding-right: 40px;
+    /* Ajustez l'espace pour les boutons */
+}
+
+.type_msg {
+    padding-right: 40px;
+    /* Ajuster l'espace pour les boutons */
+}
+
+
+/* ///// */
+
+.dropdown-container,
+mat-form-field {
+    width: 20vw;
+    font-size: 1.5vw;
+    padding: 0.5vw;
+}
+
+.mat-option {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    font-size: 2vw;
+}
+
+.flag {
+    font-size: 3vw;
+    padding-right: 0.5vw;
+    vertical-align: middle;
+}
+
+.swap {
+    margin-bottom: 2vh;
+    width: fit-content;
+    height: fit-content;
+}
+
+.mic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar {
+    padding-top: 2vh;
+    padding-left: 2vh;
+    width: 2vw;
+}
+
+#char-count {
+    margin-top: 55vh;
+    margin-left: -6vw;
+    font-size: 1.5vw;
+}
+
+.dropdown-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F9FAFD;
+    height: 6vh;
+    margin-top: -1vh;
+}
+
+.search-icon {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.selected {
+    padding-left: 0.5vw;
+}

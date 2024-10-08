@@ -1,0 +1,26 @@
+.navbar-custom.navbar-transparent {
+    background-color: transparent !important;
+}
+.navbar-custom.navbar-transparent.navbar-dark .nav-link {
+    color: #000 !important; /* Set text color to dark */
+}
+.navbar-custom .nav-link {
+    color: #4a1abb !important; /* Default text color */
+}
+
+/* Change text color of navbar links when navbar has light background */
+.navbar-custom.navbar-light .nav-link {
+    color: #000 !important; /* Set text color to black */
+}
+
+.home-img img {
+    width: 100%; /* Set the width to 100% to make the image fill its container */
+    max-width: 100%; /* Ensure that the image doesn't exceed its original size */
+    height: auto; /* Maintain the aspect ratio of the image */
+    transition: transform 0.5s ease; /* Add transition for smooth animation */
+}
+
+/* Increase size on hover */
+.home-img img:hover {
+    transform: scale(1.1); /* Scale up the image by 10% on hover */
+}

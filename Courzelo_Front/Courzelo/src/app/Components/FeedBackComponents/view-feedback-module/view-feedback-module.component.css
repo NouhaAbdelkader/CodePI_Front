@@ -1,0 +1,10 @@
+.my-card {
+  margin-top: 200px; /* Adjust this value based on the height of your navbar */
+  margin-left: 630px; /* Adjust this value based on the width of your sidebar */
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}

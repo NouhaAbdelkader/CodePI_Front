@@ -1,0 +1,123 @@
+<!--Navbar Start-->
+<nav class="navbar topnav navbar-expand-lg fixed-top navbar-custom sticky sticky-dark navbar-transparent" id="nav-sticky">
+    <div class="container-fluid">
+        <!-- LOGO -->
+        <a class="logo text-uppercase" href="index.html">
+            <img src="assets/images/logo.png" alt="" class="logo-light" height="70" />
+            <img src="assets/images/logo.png" alt="" class="logo-dark" height="70" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="mdi mdi-menu"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto" id="mySidenav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button" aria-haspopup="true" routerLink="/sessionchat" aria-expanded="false">
+                        <i class="mdi mdi-view-dashboard me-1"></i> Session Chat
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" href="all-Modules" id="topnav-ui" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-invert-colors me-1"></i> Academic Program 
+                        <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu mega-dropdown-menu dropdown-mega-menu-xl" aria-labelledby="topnav-ui">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div>
+                                    <a routerLink="/Documentation" class="dropdown-item">MY Projects </a>
+                                    <a routerLink="/getprogaccesstocourse" class="dropdown-item">My Program </a>
+                                    <a routerLink="/addProject" class="dropdown-item">Add new Project  </a>
+                                    <a routerLink="/getallprojects" class="dropdown-item">Get All Projects </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-apps" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fe-grid me-1"></i> Project Management
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" href="rewards" id="topnav-dashboard" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-trophy me-1"></i> Rewards
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-lifebuoy me-1"></i> Evaluation
+                        <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="topnav-components">
+                        <a routerLink="/evguide" class="dropdown-item">Guide</a>
+                        <div class="dropdown">
+                            <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-extendedui" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Grades
+                                <div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="topnav-extendedui">
+                                <a routerLink="/grades" class="dropdown-item">Modules grades</a>
+                                <a routerLink="/finalGrade" class="dropdown-item">Final grades</a>
+                            </div>
+                        </div>
+                        <a routerLink="/rewardsStat" class="dropdown-item">Performance</a>
+                        <a routerLink="/all-Modules" class="dropdown-item">Modules</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a routerLink="/forumQuestion" class="nav-link arrow-none" href="index.html" id="topnav-dashboard" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-cards-outline me-1"></i> Forum
+                    </a>
+                </li>
+
+                <li class="dropdown notification-list topbar-dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" (click)="resetNotificationCount3()">
+                        <i class="fe-bell noti-icon"></i>
+                        <span class="badge bg-danger rounded-circle noti-icon-badge">0</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-lg" style="max-height: 1000px;width: 1000%;">
+                        <div class="slimscroll" style="max-height: 1000px;">
+                            <a class="dropdown-item notify-item" style="width: 100%; overflow: visible;">
+                                <div class="notify-icon bg-warning">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details" style="width: 50%; white-space: normal; overflow: visible;">
+                                    Notification details
+                                    <small class="text-muted">1 second ago</small>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="dropdown notification-list topbar-dropdown">
+                    <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <span class="pro-user-name ms-1">
+                             Logout <i class="mdi mdi-chevron-down"></i>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end profile-dropdown">
+                        <a class="dropdown-item notify-item" href="contacts-profile.html">
+                            <i class="fe-user"></i>
+                            <span>My Account</span>
+                        </a>
+                        <a class="dropdown-item notify-item" href="auth-lock-screen.html">
+                            <i class="fe-lock"></i>
+                            <span>Lock Screen</span>
+                        </a>
+                        
+                    </div>
+                </li>
+
+              
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->

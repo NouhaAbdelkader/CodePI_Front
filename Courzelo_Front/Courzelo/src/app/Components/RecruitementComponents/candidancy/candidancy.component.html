@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="row">
+    <div class="col-md-6 col-xl-3" *ngFor=" let candicancy of candicancis">
+
+        <!-- Simple card -->
+        <div class="card my-card">
+            <img class="card-img-top img-fluid" src="../assets/images/gallery/recrutement.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">candidancy</h4>
+                <p class="card-text">Description: {{candicancy.description}}</p>
+                <p class="card-text">Skills: {{candicancy.skills}}</p>
+                <p class="card-text">Experience: {{candicancy.experience}}</p>
+                <p class="card-text">Resume: {{candicancy.resume}}</p>
+                <button class="btn btn-primary" (click)="updateCandidacy(candicancy.id)">Update</button>
+                <button class="btn btn-danger" (click)="deleteCandidacy(candicancy.id)">Delete</button>
+                <!--<button class="btn btn-success" (click)="viewjobOffer(joboffer.id)">Apply</button>-->
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+
+</div>

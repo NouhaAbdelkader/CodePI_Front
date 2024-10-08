@@ -1,0 +1,84 @@
+/* CSS for Card Container */
+.card-container {
+    display: flex;
+    flex-direction: column; /* Arrange cards vertically */
+  }
+  
+  /* CSS for Card Styling */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x)* -.5);
+    margin-left: calc(var(--bs-gutter-x)* -.5);
+    margin-bottom: 20px; /* Add some bottom margin */
+    margin-block:139px
+  }
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    color: #007bff; /* Light shade of blue */
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the text bold */
+  }
+  .center-snackbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Adjust the sidebar width and set a fixed position */
+app-side-bar {
+  width: 250px; /* Adjust the width according to your design */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Make it full height */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Give the main content some left margin to accommodate the sidebar */
+.all-tests-container {
+  margin-left: 250px; /* Adjust the margin based on your sidebar width */
+}
+
+/* Add padding to the main content to ensure it's not hidden behind the sidebar */
+.container-fluid {
+  padding: 60px;
+}
+/* Ajoutez ces styles à votre fichier CSS pour définir les couleurs des boutons */
+
+.btn-success-custom {
+background-color: #87CEEB; /* Bleu pastel */
+border-color: #87CEEB; /* Couleur de la bordure */
+color: #fff; /* Couleur du texte */
+}
+
+.btn-danger-custom {
+background-color: #FFD700; /* Jaune pastel */
+border-color: #FFD700; /* Couleur de la bordure */
+color: #fff; /* Couleur du texte */
+}

@@ -1,0 +1,43 @@
+.popup {
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 60%; /* Adjust width as needed */
+    max-width: 600px; /* Set maximum width */
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+  .box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+  }
+  .popup h2 {
+    margin: 0;
+    color: #0bb5bf;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: left; /* Align heading to the left */
+  }
+  
+  .popup .close {
+    position: absolute;
+    top: 0px;
+    right: -86px;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1890d9;
+}
+  
+   ::after, ::before {
+    box-sizing: border-box;
+    margin-block: 7px;
+}
+  /* Other styles remain the same */
+  

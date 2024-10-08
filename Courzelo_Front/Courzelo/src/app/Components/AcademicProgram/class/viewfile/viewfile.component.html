@@ -1,0 +1,38 @@
+<!-- your-component.component.html -->
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div>
+    <div *ngIf="courseInfo">
+      <h3>Course Information</h3>
+      <p><strong>Name:</strong> {{ courseInfo.name }}</p>
+      <p><strong>Description:</strong> {{ courseInfo.description }}</p>
+    </div>
+  
+    <br />
+  
+    <label for="fileInput">Select File:</label>
+    <input type="file" #fileInput (change)="onFileSelected($event)">
+    <br />
+  
+    <button (click)="uploadFile()">Upload</button>
+  
+    <div *ngIf="downloadUrl">
+      <p>Download Link:</p>
+      <a [href]="downloadUrl" download="downloaded_file">Download the file</a>
+    </div>
+  
+    <br />
+  
+    <div *ngIf="fileContent !== undefined">
+      <hr>
+      <h4>File Content:</h4>
+      <div *ngIf="contentType.startsWith('image')">
+        <img [src]="fileContent" alt="Image Content">
+      </div>
+      <pre *ngIf="contentType.startsWith('text') && !contentType.startsWith('image') && !contentType.startsWith('application/pdf')">{{ fileContent }}</pre>
+      <div *ngIf="!contentType.startsWith('text') && !contentType.startsWith('image') && !contentType.startsWith('application/pdf')">
+        {{ fileContent }}
+      </div>
+    </div>
+  </div>
+  

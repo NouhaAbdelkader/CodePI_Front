@@ -1,0 +1,81 @@
+<div class="modal-body p-4">
+
+    <!-- Pills navs -->
+
+    <!-- Pills content -->
+    <div class="tab-content">
+        <div class="tab-pane fade active show" id="pills-login" role="tabpanel" aria-labelledby="mdb-tab-login">
+            <form [formGroup]="registerForm">
+                <!---Title-->
+                <!-- Title -->
+                <div class="form-group mb-4">
+                    <label style="margin-left: 0px;">Title</label>
+                    <input type="text" formControlName="title" class="form-control" placeholder="Title" (input)="messageInput($event)">
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 114.4px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                </div>
+                <div *ngIf="registerForm.controls['title'].errors && registerForm.get('title')?.touched">
+                    <div *ngIf="registerForm.controls['title'].hasError('required')" style="color: red;">
+                        Title is required
+                    </div>
+                    <div *ngIf="registerForm.controls['title'].hasError('minlength')" style="color: red;">
+                        Title must be at least 10 characters long
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group mb-4">
+                    <label style="margin-left: 0px;">Description</label>
+                    <input type="text" formControlName="description" class="form-control" placeholder="Description" (input)="messageInput2($event)">
+                    <div class="form-notch">
+                        <div class="form-notch-leading" style="width: 9px;"></div>
+                        <div class="form-notch-middle" style="width: 114.4px;"></div>
+                        <div class="form-notch-trailing"></div>
+                    </div>
+                </div>
+                <div *ngIf="registerForm.controls['description'].errors && registerForm.get('description')?.touched">
+                    <div *ngIf="registerForm.controls['description'].hasError('required')" style="color: red;">
+                        Description is required
+                    </div>
+                    <div *ngIf="registerForm.controls['description'].hasError('minlength')" style="color: red;">
+                        Description must be at least 10 characters long
+                    </div>
+                </div>
+
+                <!-- Module -->
+                <div *ngIf="!update" class="form-group mb-4">
+                    <label style="display: block; margin-left: 0px;">Module</label>
+                    <select formControlName="module" name="dropdownOption" id="dropdownOption" class="selectpicker form-control" data-style="btn-primary" style="width: 100%;">
+                        <option value="" disabled selected>Select a module</option>
+                        <option *ngFor="let m of listModule">{{m.name}}</option>
+                    </select>
+                </div>
+
+
+                <div *ngIf="registerForm.controls['module'].errors && registerForm.get('module')?.touched">
+                    <div *ngIf="registerForm.controls['module'].hasError('required')" style="color: red;">
+                        Module is required
+                    </div>
+                    <!-- Add more error messages for other validation conditions if needed -->
+                </div>
+
+                <!-- Password input -->
+
+                <!-- Submit button -->
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+                    <button *ngIf="update==false" type="submit" class="btn btn-primary" (click)="ajouter()" [disabled]="!isMessageValid ||!isMessageValid2 ">Add</button>
+                    <button *ngIf="update==true" type="submit" class="btn btn-primary" (click)="updatepop()" [disabled]="!isMessageValid ||!isMessageValid2 ">Update</button>
+                </div>
+
+                <!-- Register buttons -->
+
+            </form>
+        </div>
+
+    </div>
+    <!-- Pills content -->
+</div>

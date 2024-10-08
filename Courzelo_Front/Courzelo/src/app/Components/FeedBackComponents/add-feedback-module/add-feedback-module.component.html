@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+    </div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <h3>Feedback Module</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea formControlName="description" class="form-control" placeholder="Your Feedback *"
+                        rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <select formControlName="selectedModule" class="form-control" required>
+                        <option value="">Select Module *</option>
+                        <option *ngFor="let module of modules" [value]="module">{{ module }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select formControlName="courseContent" class="form-control" required>
+                        <option value="">Select Satisfaction Rating *</option>
+                        <option *ngFor="let rating of [1, 2, 3, 4, 5]" [value]="rating">{{ rating }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" (click)="saveFeedback()" class="btnContact"
+                        [disabled]="!contactForm.valid">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

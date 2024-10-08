@@ -1,0 +1,92 @@
+
+.update-level-container {
+  max-width: 400px;
+  margin: 140px ; /* Adjust the margin to your preference */
+  padding: 40px; /* Adjust the padding to your preference */
+  border: 15px  solid #ccc;
+  border-radius: 64px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  .update-level-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+  }
+  
+  .update-level-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .update-level-button:hover {
+    background-color: #45a049;
+  }
+  .my-form {
+    margin-top: 60px; /* Adjust this value based on the height of your navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(
+      100vh - 60px
+    ); /* Adjust this value based on the height of your navbar */
+  }
+  .my-form .is-invalid {
+    border: 1px solid red;
+  }
+  
+  .invalid-feedback {
+    color: red;
+  }
+  /* Adjust the sidebar width and set a fixed position */
+app-side-bar {
+  width: 250px; /* Adjust the width according to your design */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%; /* Make it full height */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Give the main content some left margin to accommodate the sidebar */
+.all-tests-container {
+  margin-left: 250px; /* Adjust the margin based on your sidebar width */
+}
+
+/* Add padding to the main content to ensure it's not hidden behind the sidebar */
+.container-fluid {
+  padding-top: 130px;
+}
+/* Ajoutez ces styles à votre fichier CSS pour définir les couleurs des boutons */
+
+.btn-success-custom {
+background-color: #87CEEB; /* Bleu pastel */
+border-color: #87CEEB; /* Couleur de la bordure */
+color: #fff; /* Couleur du texte */
+}
+
+.btn-danger-custom {
+background-color: #FFD700; /* Jaune pastel */
+border-color: #FFD700; /* Couleur de la bordure */
+color: #fff; /* Couleur du texte */
+}
+  

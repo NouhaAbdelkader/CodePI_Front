@@ -1,0 +1,10 @@
+.my-form {
+  margin-top: 60px; /* Adjust this value based on the height of your navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(
+    100vh - 60px
+  ); /* Adjust this value based on the height of your navbar */
+}

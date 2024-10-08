@@ -1,0 +1,68 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container">
+    <h2>Add Project</h2>
+  
+    <form [formGroup]="projectForm" (ngSubmit)="saveProject()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Enter project name">
+      </div>
+  
+     <div class="form-group">
+  <label for="description">Description:</label>
+  <textarea class="form-control" formControlName="description" placeholder="Enter project description" style="white-space: pre-wrap;"></textarea>
+</div>
+
+      <div class="form-group">
+        <label for="number">Number:</label>
+        <input type="number" class="form-control" formControlName="number" placeholder="Enter number" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="difficulty">Difficulty:</label>
+        <select class="form-control" formControlName="difficulty">
+          <option value="" disabled>Select Difficulty</option>
+          <option *ngFor="let diff of difficultyValues" [value]="diff">{{ diff }}</option>
+        </select>
+      </div>
+
+     
+     <div class="form-group">
+      <label for="specialities">Requirements:</label>
+      <select multiple size="5" class="form-control" formControlName="specialities">
+        <option *ngFor="let speciality of specialities" [value]="speciality">{{ speciality }}</option>
+      </select>
+    </div>
+
+      <div class="form-group">
+        <label for="deadline">Deadline:</label>
+        <input type="date" class="form-control" formControlName="deadline">
+      </div>
+  
+      <div class="form-group">
+        <label for="datedebut">Start Date:</label>
+        <input type="date" class="form-control" formControlName="datedebut">
+      </div>
+      <div class="form-group">
+        <label for="taskName">Add Task:</label>
+        <div class="input-group">
+          <input type="text" class="form-control" formControlName="taskName" placeholder="Enter task name">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" (click)="addTask()">Add Task</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Display added tasks -->
+      <div class="form-group" *ngIf="tasks.length > 0">
+        <label for="taskList">Tasks:</label>
+        <ul class="list-group" id="taskList">
+          <li class="list-group-item" *ngFor="let task of tasks">
+            {{ task.name }}
+          </li>
+        </ul>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Project</button>
+    </form>
+  </div>

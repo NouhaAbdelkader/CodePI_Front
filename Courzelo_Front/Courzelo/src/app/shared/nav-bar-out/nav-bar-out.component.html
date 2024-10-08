@@ -1,0 +1,64 @@
+<div id="app">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+    <!-- Navbar starts -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <!-- Brand/logo -->
+        <a href="#" class="navbar-brand">
+            <a class="logo text-uppercase" href="index.html">
+                <!-- <img src="assets/images/logo.png" alt="" class="logo-light" height="60" />
+                <img src="assets/images/logo.png" alt="" class="logo-dark" height="50" /> -->
+            </a>
+           
+        </a>
+        <nav class="navbar navbar-custom ">
+            <!-- Brand/logo on the left -->
+            <a class="navbar-brand" href="index.html">
+            </a>
+       
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+       
+            <!-- Navbar links -->
+                <!-- Links on the left side (mr-auto for margin-right:auto) -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/HomePage" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                </ul>
+               
+                <!-- Right side of the navbar (ml-auto for margin-left:auto) -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Sign in and Sign up -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/register"><i class="fas fa-user-plus"></i> </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> </a>
+                    </li>
+                </ul>
+        </nav>        
+    </nav>
+</div>
+
+
+
+
+
+
+    <!-- Navbar ends -->
+   
+    <!-- Main banner -->
+    
+     
+    <!-- Content container -->
+    <div class="container mt-4">
+        <router-outlet></router-outlet>
+    </div>
+
+
+
+

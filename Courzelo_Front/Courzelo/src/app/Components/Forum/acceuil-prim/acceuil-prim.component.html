@@ -1,0 +1,210 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="content-page">
+    <div class="content">
+
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box page-title-box-alt">
+                        <div class="page-title-right">
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">welcome</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">explanation</a></li>
+                                <li class="breadcrumb-item active">incentives</li>
+                            </ol>
+                        </div>
+                        <h4 class="page-title">Incentives Page </h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="timeline">
+                        <article class="timeline-item alt">
+                            <div class="time-show first">
+                                <a routerLink="/forumIncentives" class="btn btn-primary width-lg">see your Incentives</a>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon bg-danger"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-danger mt-0">valid votes</h4>
+                                        <p class="timeline-date text-muted"><small>5 votes every 24h</small></p>
+                                        <p>If a professor reaches 5 valid votes, they can't vote for 24 hours. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item ">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-success"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-success mt-0">Accumulating Incentive Votes</h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>Each valid vote contributes to the accumulation of incentive votes for the professor.
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon bg-primary"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-primary mt-0">getting the vote bonus</h4>
+                                        <p class="timeline-date text-muted"><small>voting for a month(150 votes) every day 5 votes</small></p>
+                                        <p>When the total number of incentive votes reaches 150, the professor receives a vote bonus.</p>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-purple"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-purple mt-0">the deliberation of the vote bonus</h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>A vote bonus is recorded with the current date and added to the bonus table. Bonuses are granted based on the professor's payment date. If the bonus date falls before the payment date in the current month, the bonus
+                                            is awarded this month, otherwise it's postponed to the next month.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-muted mt-0">Deleteing vote</h4>
+                                        <p class="timeline-date text-muted"><small></small></p>
+                                        <p>When a vote is removed we update the incentive vote count, and decreasing it if it was different from 0.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item alt">
+                            <div class="time-show">
+                                <a href="#" class="btn btn-primary width-lg"> Explanation Incentive</a>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-warning"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-warning mt-0">Chat room</h4>
+                                        <p class="timeline-date text-muted"><small></small></p>
+                                        <p>Professors can enter a chat room with students to clarify questions posed by the students and explain them
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon bg-primary"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-primary mt-0">getting the explanation bonus</h4>
+                                        <p class="timeline-date text-muted"><small>the professor can get one inventive only every 24h</small></p>
+                                        <p>The student can approve the best explanation, which awards an Explanation Incentive (the type of incentive) to the corresponding professor. This incentive is also recorded in the Incentives table.
+
+
+
+
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="timeline-item alt">
+                            <div class="time-show">
+                                <a href="#" class="btn btn-primary width-lg">Badge</a>
+                            </div>
+                        </article>
+                        <article class="timeline-item">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-success"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-success mt-0">How to get a badge </h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>The number of vote bonuses for badges (nbPrimeVoteForBadge) is incremented by 1 each time the professor receives a vote bonus, in two cases</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+
+                        <article class="timeline-item alt">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow-alt"></span>
+                                        <span class="timeline-icon"><i class="mdi mdi-circle"></i></span>
+                                        <h4 class="text-muted mt-0">The two Conditions </h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>When the counter was at 0 or If the last vote incentive obtained was from the preceding month of the new vote incentive obtained, then the counter is incremented by 1. However, it resets to 0 </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item">
+                            <div class="timeline-desk">
+                                <div class="panel">
+                                    <div class="panel-body">
+                                        <span class="arrow"></span>
+                                        <span class="timeline-icon bg-danger"><i class="mdi mdi-circle">    </i></span>
+                                        <h4 class="text-danger mt-0">getting the badge </h4>
+                                        <p class="timeline-date text-muted"><small>.</small></p>
+                                        <p>If nbPrimeVoteForBadge reaches 5 (meaning the professor has received 5 vote bonuses per day for 5 consecutive months), a check is performed to see if there are at least 5 explanation incentives in the same period
+                                            from the IncentivesVote table. If so, the professor receives a reward badge, and nbPrimeVoteForBadge is reset to 0. Otherwise, nbPrimeVoteForBadge is simply reset to 0 without awarding a badge.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+
+
+        </div>
+        <!-- container -->
+
+    </div>
+    <!-- content -->
+
+
+
+</div>
+<router-outlet></router-outlet>

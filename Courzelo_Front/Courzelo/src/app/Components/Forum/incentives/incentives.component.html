@@ -1,0 +1,85 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="content-page">
+    <div class="content">
+
+
+        <!-- Start Content-->
+        <!-- Start Content-->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+
+                        <div class="page-title-box page-title-box-alt">
+
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Adminto</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
+                                    <li class="breadcrumb-item active">Datatables</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Datatables</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end page title -->
+                <!-- Sidebar pour les badges -->
+                <div class="col-md-3">
+                    <!-- Changement de col-md-2 à col-md-3 -->
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="page-title">Les badges:</h4>
+                            <div *ngFor="let p of listBadges" class="row justify-content-between">
+                                <p class="text-muted">
+                                    <i class="fas fa-star fa-lg" style="color: yellow; margin-right: 10px;"></i>
+                                    <!-- Icône de favori en jaune, plus grande, avec un espace à droite -->
+                                    <i>{{p.date | date : "MMMM d, yyyy, h:mm a"}}</i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne pour le tableau -->
+                <div class="col-md-9">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="mt-0 header-title">Les primes </h4>
+                            <p class="text-muted font-14 mb-3">
+                                les primes que vous avez obtenu à partir des votes et des explications directes avec Vos
+                                etudiants en chat
+                            </p>
+
+                            <table id="datatable" class="table table-bordered dt-responsive table-responsive nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>incentives Type</th>
+                                        <th>date OF Obtaining</th>
+                                        <th>DeliberationDate</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody *ngFor="let p of listIncentives">
+                                    <tr>
+                                        <td>{{p.incentivesType}}</td>
+                                        <td>{{p.dateOFObtaining | date : "MMMM d, yyyy, h:mm a"}}</td>
+                                        <td>{{p.deliberationDate | date : "MMMM d, yyyy, h:mm a"}}</td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- container-fluid -->
+
+    </div>
+    <!-- content -->
+
+
+
+</div>

@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+<div class="content-page">
+    <div class="content">
+
+        <!-- Start Content-->
+        <div class="container-fluid">
+            
+            <!-- start page title -->
+            <div class="row">
+                
+            <div class="col-12">
+            <div class="page-title-box page-title-box-alt" style="margin-top: 20px;">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Courzelo</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Schedule</a></li>
+                    <li class="breadcrumb-item active">Live Session</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Live Session</h4>
+            </div>
+            </div>
+
+            </div><!--end page title-->
+            <div class="row">
+                <div class="col-12">
+                            <div class="row">
+                                
+
+                                <div class="col-lg-9">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                            <mat-grid-list cols="2" rowHeight="2:1">
+                                                <mat-grid-tile>
+                                                    <p style="position: absolute; left: 10px; top: 0px;" class="video-description">local :</p>
+                                                    <video style="width: 100%; background: grey;" #local_video [autoplay]="true" [muted]="true"></video>
+                                                </mat-grid-tile>
+                                                <mat-grid-tile>
+                                                    <p style="position: absolute; left: 10px; top: 0px;" class="video-description">remote :</p>
+                                                    <video style="width: 100%; background: grey;" #received_video [autoplay]="true"></video>
+                                                </mat-grid-tile>
+                                            </mat-grid-list>
+                                            <button style="margin: 1em;" mat-raised-button color="primary" (click)="startLocalVideo()" [disabled]="localVideoActive">start Local</button>
+                                            <button style="margin: 1em;" mat-raised-button color="primary" (click)="pauseLocalVideo()" [disabled]="!localVideoActive">Stop Local</button>
+                                            <button style="margin: 1em;" mat-raised-button color="primary" (click)="call()" [disabled]="inCall" >Call</button>
+                                            <button style="margin: 1em;" mat-raised-button color="primary" (click)="hangUp()" [disabled]="!inCall">Hangup</button>
+
+
+
+
+                                        </div> <!-- end card body-->
+                                    </div> <!-- end card -->
+                                </div> <!-- end col -->
+
+                            </div>  <!-- end row -->
+                       
+
+                    
+                </div>
+                <!-- end col-12 -->
+            </div>     
+        </div> <!-- container -->
+
+    </div> <!-- content -->
+</div>

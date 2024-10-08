@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="box">
+  <div class="popup">
+    <h2>Show Details</h2>
+
+    <a class="close" (click)="closeDialog()">&times;</a>
+    <div class="content">
+      <p>Name:{{ data.name }}</p>
+      <p>Description:{{ data.description }}</p>
+      <p>Difficulty: {{ data.difficulty }}</p>
+      <p>Requirements: {{ data.specialities }}</p>
+      <p>Start Date: {{ data.datedebut | date:'dd/MM/yyyy' }}</p>
+      <p>Deadline: {{ data.deadline | date:'dd/MM/yyyy' }}</p>
+      
+      <p>Tasks:</p>
+      <ul>
+        <li *ngIf="!data.tasks">Tasks data is empty or undefined</li>
+        <li *ngFor="let task of data.tasks">
+          {{ task.name }}  
+        </li>
+      </ul>
+      <!-- Add more details as needed -->
+    </div>
+  </div>
+</div>

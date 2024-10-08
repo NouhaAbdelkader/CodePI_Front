@@ -1,0 +1,23 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div>
+    <div *ngIf="courseInfo">
+      <h3>Course Information</h3>
+      <p><strong>Name:</strong> {{ courseInfo.name }}</p>
+      <p><strong>Description:</strong> {{ courseInfo.description }}</p>
+    </div>
+  
+    <br />
+  
+    <label for="fileInput">Select File:</label>
+    <input type="file" #fileInput (change)="onFileSelected($event)">
+    <br />
+<button (click)="uploadFile()">Uploader</button>
+
+<div *ngIf="downloadUrl">
+    <p>Lien de téléchargement :</p>
+    <a [href]="downloadUrl" download="NomDuFichier">Télécharger le fichier</a>
+  </div>
+<br />
+  </div>
+  

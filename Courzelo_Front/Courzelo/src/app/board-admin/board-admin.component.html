@@ -1,0 +1,36 @@
+<!-- Begin page -->
+
+<router-outlet></router-outlet>
+<div class="all-tests-container">
+    <div class="container-fluid">
+<div id="wrapper">
+
+
+    <!-- Topbar Start -->
+
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <!-- Start Content-->
+                <div class="row justify-content-start">
+                    <div class="col-auto ms-5">
+                        <!-- Ajoutez ms-5 ici pour décaler toute la carte vers la droite -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="pie small-square" [chart]="lineChart"></div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+ <app-side-bar></app-side-bar>
+    <!-- Left Sidebar End -->
+
+</div>

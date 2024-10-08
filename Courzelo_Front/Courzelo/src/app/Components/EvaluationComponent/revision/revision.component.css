@@ -1,0 +1,24 @@
+/* Barre de navigation */
+.app-nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    padding: 150px 200px; /* Augmenter le padding pour plus d'espace */
+    z-index: 1000; /* Assurer que la barre de navigation est au-dessus de tout */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajouter une ombre subtile pour le style */
+  }
+  
+  /* Contenu principal */
+  
+  
+    
+    /* Give the main content some left margin to accommodate the sidebar */
+    .revision-container {
+      padding: 130px; /* Ajuster l'espacement interne du contenu */
+      margin-right: auto; /* Center the content by setting right margin to auto */
+    }
+    
+    /* Add padding to the main content to ensure it's not hidden behind the sidebar */
+    

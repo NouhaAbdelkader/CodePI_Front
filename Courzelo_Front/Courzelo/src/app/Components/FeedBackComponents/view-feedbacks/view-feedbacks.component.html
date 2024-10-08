@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card" id="chart-container">
+            <div class="card-body">
+                <button class="btn btn-success float-end" (click)="sendEmailToTeacher()">
+                    Send Emails to Teachers
+                </button>
+                <h4 class="header-title mb-3">Donut Chart</h4>
+                <div dir="ltr">
+                    <div id="morris-donut-example" style="height: 300px;" class="morris-chart"
+                        data-colors="#4fc6e1,#6658dd,#ebeff2"></div>
+                </div>
+                <div class="text-center">
+                    <ul class="list-inline chart-detail-list">
+                        <li class="list-inline-item">
+                            <h5 style="color: #5b69bc;"><i class="fa fa-circle me-1"></i>Module Feedbacks</h5>
+                            <h6>{{ moduleFeedback?.length }}</h6>
+                        </li>
+                        <li class="list-inline-item">
+                            <h5 style="color: #35b8e0;"><i class="fa fa-circle me-1"></i>Teacher Feedbacks</h5>
+                            <h6>{{ teacherFeedback?.length }}</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+</div>

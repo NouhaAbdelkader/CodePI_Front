@@ -1,0 +1,118 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="grades-container">
+    <div class="content-page">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <h4 class="header-title mb-3">
+                        <i class="mdi mdi-chart-arc" style="color: #35b8e0; font-size: 24px;"></i>
+                        My Performance
+                    </h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <ul class="list-inline chart-detail-list">
+                                    <li class="list-inline-item">
+                                        <h5 style="color: #ff8acc;"><i class="mdi mdi-checkbox-blank-circle"></i> Quiz Grade</h5>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <h5 style="color: #35b8e0;"><i class="mdi mdi-checkbox-blank-circle"></i> Final Grade</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div dir="ltr">
+                                <svg height="300" width="900" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Vertical axis -->
+                                    
+                                    <!-- Axis labels -->
+                                    <text x="70" y="20" font-family="sans-serif" font-size="12px" fill="#888888">100</text>
+                                    <text x="70" y="80" font-family="sans-serif" font-size="12px" fill="#888888">75</text>
+                                    <text x="70" y="140" font-family="sans-serif" font-size="12px" fill="#888888">50</text>
+                                    <text x="70" y="200" font-family="sans-serif" font-size="12px" fill="#888888">25</text>
+                                    <text x="70" y="260" font-family="sans-serif" font-size="12px" fill="#888888">0</text>
+                                    
+                                    <!-- Modules -->
+                                    <ng-container *ngFor="let e of moduleEvaluations; let i = index">
+                                        <!-- Bar rectangles -->
+                                        <g [attr.transform]="'translate(' + (150 + (i * 120)) + ', 0)'">
+                                            <!-- Gradient fill for bars -->
+                                            <defs>
+                                                <linearGradient id="quizGradient{{i}}" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="#ff8acc" />
+                                                    <stop offset="100%" stop-color="#f3e0fa" />
+                                                </linearGradient>
+                                                <linearGradient id="finalGradient{{i}}" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="#35b8e0" />
+                                                    <stop offset="100%" stop-color="#c0e1f7" />
+                                                </linearGradient>
+                                            </defs>
+                                            <rect x="0" [attr.y]="250 - (e.quizGrade * 10 || 0)" width="10" [attr.height]="e.quizGrade * 10 || 0" [attr.fill]="'url(#quizGradient' + i + ')'">
+                                                <title>{{ e.module.name }} - Quiz Grade: {{ e.quizGrade }}</title>
+                                            </rect> <!-- Quiz Grade -->
+                                            <rect x="20" [attr.y]="250 - (e.finaltest_grade * 10 || 0)" width="10" [attr.height]="e.finaltest_grade * 10 || 0" [attr.fill]="'url(#finalGradient' + i + ')'">
+                                                <title>{{ e.module.name }} - Final Grade: {{ e.finaltest_grade }}</title>
+                                            </rect> <!-- Final Grade -->
+                                            <text x="0" y="270" font-family="sans-serif" font-size="12px" fill="#888888">{{ e.module.name }}</text>
+                                        </g>
+                                    </ng-container>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                    </div>
+                      <!-- Strengths Section -->
+                      <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4><i class="mdi mdi-thumb-up"></i> Strengths:</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;">Area</th>
+                                                <th style="width: 50%;">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let strength of strengths">
+                                                <td>{{ strength }}</td>
+                                                <td>You excel in this area!</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weaknesses Section -->
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4><i class="mdi mdi-thumb-down"></i> Weaknesses:</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50%;">Area</th>
+                                                <th style="width: 50%;">Comment</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let weakness of weaknesses">
+                                                <td>{{ weakness }}</td>
+                                                <td>You should improve your skills in this area.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

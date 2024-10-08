@@ -1,0 +1,81 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="grades-container">
+    <div class="content">
+        <div class="container-fluid">
+            <h2 class="mb-4"><i class="fas fa-trophy"></i> Rewards</h2>
+            
+            <!-- Définir une ligne -->
+            <div class="row">
+                <!-- Colonne pour chaque card -->
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">ScoreXP <i class="fas fa-star text-warning" style="font-size: 24px; float: right;"></i></h5>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-warning" role="progressbar" [style.width]="userData.scoreXp + '%'">{{ userData.scoreXp }}/100</div>
+                            </div>
+                            <p class="card-text">Your experience points determine your progress.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Colonne pour chaque card -->
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Level <i class="fas fa-chart-line text-success" style="font-size: 24px; float: right;"></i></h5>
+                            <p class="card-text">{{ userData.level }}</p>
+                            <p class="card-text">Your current level is {{userData.level}}.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Autres lignes avec des cartes -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bronze Badge <i class="fas fa-medal text-bronze" style="font-size: 24px; float: right;"></i></h5>
+                            <p class="card-text">{{ this.bronzeBadge}}</p>
+                            <p class="card-text">You have earned {{ this.bronzeBadge}} bronze badge.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Silver Badge <i class="fas fa-medal text-silver" style="font-size: 24px; float: right;"></i></h5>
+                            <p class="card-text">{{ this.silverBadge }}</p>
+                            <p class="card-text">You have earned {{ this.silverBadge }} silver badge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Gold Badge <i class="fas fa-medal text-gold" style="font-size: 24px; float: right;"></i></h5>
+                            <p class="card-text">{{ this.goldBadge }}</p>
+                            <p class="card-text">You have  earned {{ this.goldBadge }} gold badge.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Diamond Badge <i class="fas fa-gem text-diamond" style="font-size: 24px; float: right;"></i></h5>
+                            <p class="card-text">{{ this.dimondBadge }}</p>
+                            <p class="card-text">You have  earned {{ this.dimondBadge }} diamond badge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

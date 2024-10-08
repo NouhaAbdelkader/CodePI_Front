@@ -1,0 +1,22 @@
+<!-- updatelevel.component.html -->
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="update-level-container">
+  <div class="all-tests-container">
+    <div class="container-fluid">
+    <h2>Update Level</h2>
+  
+    <!-- Form to update level -->
+    <form (ngSubmit)="updateLevel()" class="update-level-form">
+      <!-- Fields for updating the level, excluding the id field -->
+      <div class="form-group">
+        <label for="levelName">Level Name:</label>
+        <input type="text" id="levelName" name="levelName" [(ngModel)]="currentLevel.name" required>
+      </div>
+  
+      <!-- Add more fields as needed -->
+  
+      <!-- Submit button -->
+      <button class="update-level-button" type="submit">Update Level</button>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+/* Barre de navigation */
+.app-nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    padding: 150px 200px; /* Augmenter le padding pour plus d'espace */
+    z-index: 1000; /* Assurer que la barre de navigation est au-dessus de tout */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajouter une ombre subtile pour le style */
+}
+
+/* Contenu principal */
+
+
+.container-fluid {
+    padding: 150px; /* Ajuster l'espacement interne du contenu */
+    width: 100%; /* Assurer que le contenu occupe toute la largeur de l'écran */
+}
+
+/* Couleurs des badges */
+.text-bronze {
+    color: #cd7f32; /* Couleur du bronze */
+}
+
+.text-silver {
+    color: #c0c0c0; /* Couleur de l'argent */
+}
+
+.text-gold {
+    color: #ffd700; /* Couleur de l'or */
+}
+
+.text-diamond {
+    color: #b9f2ff; /* Couleur du diamant */
+}

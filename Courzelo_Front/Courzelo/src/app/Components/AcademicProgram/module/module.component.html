@@ -1,0 +1,67 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="add-class-container">
+    <h2>Add Class</h2>
+  
+    <div class="my-form" [formGroup]="moduleForm">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{'is-invalid': moduleForm.get('name')?.invalid && moduleForm.get('name')?.touched}" />
+                <div *ngIf="moduleForm.get('name')?.invalid && moduleForm.get('name')?.touched" class="invalid-feedback">
+                  Name is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">description</label>
+                <input type="text" class="form-control" id="description" formControlName="description" [ngClass]="{'is-invalid': moduleForm.get('description')?.invalid && moduleForm.get('description')?.touched}" />
+                <div *ngIf="moduleForm.get('description')?.invalid && moduleForm.get('description')?.touched" class="invalid-feedback">
+                    description is required
+                </div>
+              </div>
+            
+<div class="form-group">
+    <label for="nbHeurePerWeek">nbHeurePerWeek</label>
+    <input type="text" class="form-control" id="nbHeurePerWeek" formControlName="nbHeurePerWeek" [ngClass]="{'is-invalid': moduleForm.get('nbHeurePerWeek')?.invalid && moduleForm.get('nbHeurePerWeek')?.touched}" />
+    <div *ngIf="moduleForm.get('nbHeurePerWeek')?.invalid && moduleForm.get('nbHeurePerWeek')?.touched" class="invalid-feedback">
+        nbHeurePerWeek is required
+    </div>
+  </div>
+
+  
+  <div class="form-group">
+    <label for="nbHeureTotal">nbHeureTotal</label>
+    <input type="text" class="form-control" id="nbHeureTotal" formControlName="nbHeureTotal" [ngClass]="{'is-invalid': moduleForm.get('nbHeureTotal')?.invalid && moduleForm.get('nbHeureTotal')?.touched}" />
+    <div *ngIf="moduleForm.get('nbHeureTotal')?.invalid && moduleForm.get('nbHeureTotal')?.touched" class="invalid-feedback">
+        nbHeureTotal is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="couef">couef</label>
+    <input type="text" class="form-control" id="couef" formControlName="couef" [ngClass]="{'is-invalid': moduleForm.get('couef')?.invalid && moduleForm.get('couef')?.touched}" />
+    <div *ngIf="moduleForm.get('couef')?.invalid && moduleForm.get('couef')?.touched" class="invalid-feedback">
+        couef is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="semestre">Semester:</label>
+    <select id="semestre" formControlName="semestre" required>
+      <option *ngFor="let semestre of semestreValues" [value]="semestre">{{ semestre }}</option>
+    </select>
+</div>
+  
+<!-- Add a dropdown for selecting classes -->
+<div class="form-group">
+    <label for="classes">Classes:</label>
+    <select id="classes" formControlName="classes" multiple required>
+      <option *ngFor="let classItem of classes" [ngValue]="classItem">{{ classItem.name }}</option>
+    </select>
+  </div>
+
+      <!-- Submit button -->
+   
+      <button (click)="saveModule()" class="btn btn-success">Submit</button>
+ 
+</div>

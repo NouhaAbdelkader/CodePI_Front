@@ -1,0 +1,71 @@
+<!-- add-question.component.html -->
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="addQuestion()">
+            <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-3">
+                <li class="nav-item">
+                    <a href="#account-2" data-bs-toggle="tab" class="nav-link rounded-0 pt-2 pb-2 active">
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span class="d-none d-sm-inline">Question</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile-tab-2" data-bs-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                        <i class="mdi mdi-face-profile me-1"></i>
+                        <span class="d-none d-sm-inline">Answers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#finish-2" data-bs-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
+                        <i class="mdi mdi-checkbox-marked-circle-outline me-1"></i>
+                        <span class="d-none d-sm-inline">Correct answer</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content b-0 mb-0 pt-0">
+                <div class="tab-pane active" id="account-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" rows="3" [(ngModel)]="newQuestion.description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="profile-tab-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3" *ngFor="let answer of newAnswers; let i = index">
+                                <label for="answer{{ i }}" class="form-label">{{ answer.name }}</label>
+                                <input type="text" class="form-control" [id]="'answer' + (i + 1)" [name]="'answer' + (i + 1)" [(ngModel)]="answer.description" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="finish-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="correctAnswer" class="form-label">Correct Answer</label>
+                                <select class="form-select" id="correctAnswer" name="correctAnswer" [(ngModel)]="correctAnswer" required>
+                                    <option *ngFor="let answer of newAnswers" [value]="answer.name">{{ answer.name }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="wizard">
+                            <div class="list-inline-item">
+                                <button type="submit" class="btn btn-secondary">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

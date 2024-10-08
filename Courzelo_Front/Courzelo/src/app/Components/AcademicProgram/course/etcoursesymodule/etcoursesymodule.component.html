@@ -1,0 +1,41 @@
+<!-- your-component.component.html -->
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container mt-4">
+    <h2 class="text-info font-weight-bold mb-4">Courses for Module ID: {{ moduleId }}</h2>
+  
+    <div *ngIf="courses.length > 0" class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Course Name</th>
+            <th>Description</th>
+            <th>Upload Content</th> <!-- New column for upload button -->
+            <!-- Add more columns as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let course of courses; let i = index">
+            <td>{{ i + 1 }}</td>
+             <td>
+                
+                <!-- Use routerLink to navigate to the courses component with the module ID -->
+                <a [routerLink]="['/fileupload', course.id]">{{ course.name }}</a>
+              </td>
+            <td>{{ course.description || 'No description' }}</td>
+            <td>
+            
+            
+            </td>
+            <!-- Add more columns as needed -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="courses.length === 0">
+      <p>No courses available for the selected module.</p>
+    </div>
+  </div>
+  

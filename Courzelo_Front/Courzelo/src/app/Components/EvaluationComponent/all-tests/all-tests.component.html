@@ -1,0 +1,70 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="all-tests-container">
+
+  <div class="container-fluid">
+
+    <div class="row mt-3">
+      <div class="col-md-4">
+        
+      </div><!-- end col-->
+
+      <div class="col-md-8">
+        <button class="btn btn-secondary" (click)="calculFinals()"> load evaluation</button>
+
+        <form class="d-flex flex-wrap align-items-center justify-content-sm-end">
+          <label for="status-select" class="me-2">Sort By</label>
+          <div class="me-sm-2">
+            <select class="form-select my-1 my-md-0"  name="selectedSortOption" [(ngModel)]="selectedSortOption">
+              <option value="name">Name</option>
+              <option value="description">Description</option>
+              <option value="teacher">Teacher</option>
+              <option value="duration">Duration</option>
+            </select>
+          </div>
+
+          <label for="inputPassword2" class="visually-hidden">Search</label>
+          <div>
+            <input type="search" class="form-control my-1 my-md-0" name="searchText" placeholder="Search..." [(ngModel)]="searchText" (input)="sortTests()">
+          </div>
+        </form>
+      </div>
+      
+    <!-- all-tests.component.html -->
+    <div class="row mt-3">
+      <div class="col-xl-4" *ngFor="let test of tests">
+        <div class="card">
+          <div class="card-body project-box">
+            <div class="badge btn-success-custom float-end">Type: {{ test.type }}</div>
+            <h4 class="mt-0"><a [routerLink]="['/test', test.id]" class="text-dark">{{ test.name }}</a></h4>
+            <p class="text-muted font-13">Test Name: {{ test.name }}</p>
+            <p class="text-muted font-13">Test Description: {{ test.description }}</p>
+            <p class="text-muted font-13">Date: {{ test.date| date: 'short' }}</p>
+            <p class="text-muted font-13">Duration: {{ test.duration }} minutes</p>
+            <p class="text-muted font-13">Teacher: {{ test.teacher  }} </p>
+
+            <ul class="list-inline">
+              <li class="list-inline-item">
+
+                <button type="button" class="badge btn-success-custom float-end">Show questions </button>
+              </li>
+            </ul>
+
+            <!-- Add this button inside your ngFor loop -->
+            <div class="btn-group btn-group-sm d-flex">
+              <div class="ms-auto">
+                <button type="button" class="tabledit-edit-button btn btn-success-custom" (click)="openEditDialog(test)">
+                  <span class="mdi mdi-pencil"></span>
+                </button>
+                <button type="button" class="btn btn-danger btn-danger-custom" (click)="deleteTest(test)">
+                  <span class="mdi mdi-delete"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

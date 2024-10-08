@@ -1,0 +1,47 @@
+
+  
+  /* Give the main content some left margin to accommodate the sidebar */
+  .all-modules-container {
+    padding: 120px; /* Adjust the padding based on your design */
+
+    margin-right: auto; /* Center the content by setting right margin to auto */
+  }
+  
+  /* Add padding to the main content to ensure it's not hidden behind the sidebar */
+ 
+  .btn-success-custom {
+    background-color: #87CEEB; /* Bleu pastel */
+    border-color: #87CEEB; /* Couleur de la bordure */
+    color: #fff; /* Couleur du texte */
+  }
+  .modal-container .card {
+    max-width: 90%; /* Increase the max-width to make the large card larger */
+    margin: 10px auto; /* Add margin for spacing */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 8px; /* Optional: adjust border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+  }
+  .modal-container {
+ 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Adjust as desired for modal width */
+    max-height: 80%; /* Adjust as desired for modal height */
+    overflow: auto; /* Add scrolling if necessary */
+  }
+  .dialog-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  app-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* La navbar couvre toute la largeur de l'écran */
+    z-index: 1000; /* Assurez-vous qu'elle est au-dessus du contenu */
+    background-color: #f8f9fa; /* Vous pouvez ajuster la couleur de fond */
+    padding: 10px 20px; /* Ajustez l'espacement intérieur */
+  }
+  

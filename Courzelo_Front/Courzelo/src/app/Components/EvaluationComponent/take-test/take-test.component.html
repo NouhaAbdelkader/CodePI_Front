@@ -1,0 +1,117 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="border border-dark rounded p-4 exam-info">
+        <!-- Informations sur le test -->
+        <div class="border border-dark rounded p-4 exam-info">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h1 class="exam-date mb-0" style="font-size: 1.2rem;">Test Date: {{ date | date: 'short' }}</h1>
+            </div>
+            <div class="col-md-6">
+              <h1 class="exam-duration mb-0" style="font-size: 1.2rem;">Duration: {{ duration }} min</h1>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h2 style="font-size: 1.2rem;">Type: {{ type }}</h2>
+            </div>
+            <div class="col-md-6">
+              <h2 style="font-size: 1.2rem;">Teacher: {{ teacher.username }}</h2>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h2 style="font-size: 1.2rem;">Student Name: {{ username }}</h2>
+            </div>
+            <div class="col-md-6">
+              <div class="bg-light p-2 text-center mb-0" style="font-size: 1.2rem;">
+                Time Left: {{ formatTimeLeft() }}
+              </div>
+            </div>
+
+            <div class="col-md-6"></div> <!-- Utilisé pour l'alignement -->
+          </div>
+        </div>
+
+        <div class="mb-4 mt-4">
+          <h3 class="text-center mb-3">Test Instructions</h3>
+          <p class="lead">This test consists of a series of questions, each with multiple-choice answers. For each
+            question, only one answer is correct. Please read each question carefully and select the most appropriate
+            answer. You will have a limited amount of time to complete the test. Ensure to submit your answers before
+            the allotted time expires.</p>
+        </div>
+        <!-- Liste des questions -->
+        <div *ngFor="let q of questions" class="question mb-4">
+          <h2>{{ q.description }}</h2>
+          <ul class="list-unstyled">
+            <li *ngFor="let a of q.answers" class="answer-option mb-2">
+              <label class="form-check-label">
+                <input type="radio" [(ngModel)]="selectedAnswers[q.id]" name="q{{ q.id }}" [value]="a.name">
+                {{ a.description }}
+              </label>
+            </li>
+          </ul>
+        </div>
+
+
+
+
+        <!-- Boutons d'action -->
+        <div class="text-center">
+
+          <button type="button" class="btn btn-primary mr-3 waves-effect waves-light"
+            [attr.data-bs-target]="questionsWithNoAnswer() ? '#warning-modal' : '#custom-modal'" data-bs-toggle="modal">
+            Submit Exam
+          </button>
+
+          <button type="button" class="btn btn-secondary" (click)="cancelSelection()">Cancel Selection</button>
+
+
+          <!-- modal success -->
+          <div class="modal fade" id="custom-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-blur">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-center">Good job</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <i class="fas fa-check-circle text-success animate__animated animate__rubberBand"
+                    style="font-size: 48px;"></i>
+                  <p class="mt-2">Test submitted successfully</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="submitTest()">OK</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- modal warning -->
+          <div class="modal fade" id="warning-modal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-center">Warning</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                  <p>Please answer all questions before submitting the exam.</p>
+                </div>
+                <div class="modal-footer justify-content-center">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>

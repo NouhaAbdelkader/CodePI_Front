@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<router-outlet></router-outlet>
+<div class="row">
+    <div class="col-md-6 col-xl-3" *ngFor=" let joboffer of jobOffers">
+
+        <!-- Simple card -->
+        <div class="card my-card">
+            <img class="card-img-top img-fluid" src="../assets/images/gallery/developer.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{joboffer.title}}</h4>
+                <p class="card-text">Description: {{joboffer.description}}</p>
+                <p class="card-text">Skills: {{joboffer.skills}}</p>
+                <p class="card-text">Experience: {{joboffer.experience}}</p>
+                <p class="card-text">Speciality: {{joboffer.speciality}}</p>
+                <button [routerLink]="['/updatejobOffer',joboffer.id]" class="btn btn-primary">Edit</button>
+                <button class="btn btn-danger" (click)="deletejobOffer(joboffer.id)">Delete</button>
+                <button class="btn btn-success" (click)="onApplyButtonClick(joboffer.id)">Apply</button>
+                <!--<button class="btn btn-success" (click)="viewjobOffer(joboffer.id)">Apply</button>-->
+            </div>
+
+        </div><!-- end col -->
+    </div><!-- end row -->
+
+</div>

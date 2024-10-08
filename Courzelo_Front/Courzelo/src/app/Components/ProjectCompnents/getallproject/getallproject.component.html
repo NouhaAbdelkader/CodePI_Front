@@ -1,0 +1,53 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="all-tests-container">
+
+    <div class="container-fluid">
+    <div class="card-container">
+      <div class="row">
+        <!-- Loop through existing projects -->
+        <h2 class="title">All Projects</h2>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add New Project</h5>
+                <p class="card-text">Click here to add a new project</p>
+                <!-- Plus symbol in the middle -->
+                <button class="btn btn-primary" (click)="goToAddProject()">
+
+                  <span>&#43;</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-4 mb-4" *ngFor="let project of projects; let i=index">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ project.name }}</h5>
+              <p class="card-text">{{ project.description }}</p>
+              <p class="card-text">Difficulty: {{ project.difficulty }}</p>
+              <p class="card-text">Requirements: {{ project.specialities }}</p>
+              <p class="card-text">NumberOfStudents: {{ project.number }}</p>
+              <p class="card-text">Assigned Project: {{ project.hasGroupProject ? 'Has a group' : 'No group yet' }}</p> <!-- Adjusted line -->
+              <!-- "Show More" button -->
+              <div class="btn-group"></div>
+              <button class="btn btn-outline-info" (click)="showMore(project)">Show More</button>
+              <button class="btn btn-outline-warning" (click)="updateProject(project)" >Update</button>
+              <button class="btn btn-outline-danger" (click)="deleteProject(project)">Delete</button>
+              <button type="button" class="btn btn-outline-success" (click)="assignStudentsToGroup(project.id)" >Generate Group</button>
+            </div>
+        
+          </div>
+          <!-- Add an empty column after every third card to create space -->
+          <div class="col-md-4 mb-4" *ngIf="i % 3 === 2"></div>
+          <!-- Add a line break after every third card to move to the next row -->
+          <div class="w-100" *ngIf="i % 3 === 2"></div>
+        </div>
+        
+        <!-- Add New Project card -->
+        
+      </div>
+    </div>
+  </div>
+  

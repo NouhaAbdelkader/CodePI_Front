@@ -1,0 +1,22 @@
+<app-side-bar></app-side-bar>
+<router-outlet></router-outlet>
+<div class="all-tests-container">
+  <div class="container-fluid">
+<div *ngIf="currentclass" class="update-level-container">
+    <h2>Update class</h2>
+  
+    <!-- Form to update class -->
+    <form (ngSubmit)="updateclass()" class="update-level-form">
+      <!-- Fields for updating the class, excluding the id field -->
+      <div class="form-group">
+        <label for="Name">Class Name:</label>
+        <input type="text" id="Name" name="Name" [(ngModel)]="currentclass.name" required>
+      </div>
+  
+      <!-- Add more fields as needed -->
+  
+      <!-- Submit button -->
+      <button class="update-level-button" type="submit">Update class</button>
+    </form>
+  </div>
+  </div></div>
