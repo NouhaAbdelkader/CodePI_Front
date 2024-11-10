@@ -14,6 +14,7 @@
                   "builder": "@angular-devkit/build-angular:browser",
                   "options": {
                       "outputPath": "dist/courzelo",
+                     
                       "index": "src/index.html",
                       "main": "src/main.ts",
                       "polyfills": [
@@ -69,6 +70,7 @@
               },
               "serve": {
                   "builder": "@angular-devkit/build-angular:dev-server",
+                
                   "configurations": {
                       "production": {
                           "browserTarget": "Courzelo:build:production"

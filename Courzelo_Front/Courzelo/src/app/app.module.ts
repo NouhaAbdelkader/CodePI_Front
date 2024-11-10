@@ -8,7 +8,7 @@ import { NavBarComponent } from "./shared/nav-bar/nav-bar.component";
 import { QuestionComponent } from "./Components/Forum/question/question.component";
 import { AnswerComponent } from "./Components/Forum/answer/answer.component";
 import { ChatComponent } from "./Components/Forum/chat/chat.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ModalpopupComponentComponent } from "./Components/Forum/modalpopup-component/modalpopup-component.component";
 
 import { MatDialogModule } from "@angular/material/dialog";
@@ -113,7 +113,10 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HomeBarComponent } from './home-bar/home-bar.component';
-import { CoursesclientComponent } from './components/shared/coursesclient/coursesclient.component';
+import { CoursesclientComponent } from "./components/shared/coursesclient/coursesclient.component";
+import { JwtInterceptorService } from "./intercepteur/jwt-interceptor.service";
+
+
 
 
 
@@ -174,7 +177,6 @@ import { CoursesclientComponent } from './components/shared/coursesclient/course
     CourseComponent,
     ProjectComponent,
     UpdatelevelComponent,
-    
     GetlevelComponent,
     UpdateclassComponent,
     GetallclassComponent,
@@ -239,7 +241,11 @@ import { CoursesclientComponent } from './components/shared/coursesclient/course
  
     
   ],
-  providers: [authInterceptorProviders, AuthGuard, DatePipe],
+  providers: [  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptorService,
+    multi: true
+  },authInterceptorProviders, AuthGuard, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

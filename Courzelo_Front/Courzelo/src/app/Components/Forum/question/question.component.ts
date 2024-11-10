@@ -10,6 +10,12 @@ import { Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
 import { WebSocketAPI } from 'src/app/Services/ForumService/WebSocketAPI';
 import { Module as Mod } from 'src/app/Models/AcademicProgramEntities/Module';
 import { FormBuilder } from '@angular/forms';
+import { UserService } from 'src/app/Services/UserCorzeloServices/user.service';
+import { co } from '@fullcalendar/core/internal-common';
+import { UserCourzelo } from 'src/app/Models/UserCorzelo/UserCourzelo';
+import { VoteConsumerService } from 'src/app/Services/ForumService/vote-consumer.service';
+import { Answer } from 'src/app/Models/ForumEntities/Answer';
+import { Vote } from 'src/app/Models/ForumEntities/Votes';
 
 @Component({
   selector: 'app-question',
@@ -26,6 +32,11 @@ export class QuestionComponent implements OnInit{
  NaN: any;
  listModule:Mod[]=[];
  listQuestionModule:QuestionForum[]=[]
+userCourzelo!: UserCourzelo;
+ email:string ="rim2@example.com";
+ user:string ="6729034c22047c0fd6f869f8";
+ answer:string ="672e2ca7b984e47713911bd6";
+ answernaj!:Vote;
 
 avatarColor: string = '';
  //search  //search 
@@ -38,7 +49,7 @@ avatarColor: string = '';
   
 
 
-  constructor(private questionService :ConsumerQuestionServiceService ,private route:Router,private modalService: MdbModalService,private fb: FormBuilder){
+  constructor(private authService: UserService,private questionService :ConsumerQuestionServiceService ,private route:Router,private modalService: MdbModalService,private fb: FormBuilder, private vote : VoteConsumerService){
     this.questionAddedSubscription = this.questionService.questionAdded$.subscribe(() => {
       this.ngOnInit(); // Rafraîchir les données des questions
     });
@@ -51,8 +62,8 @@ avatarColor: string = '';
 
 
   ngOnInit(){
-    
-    this.questionService.getAllQuestion().subscribe(
+    this.authService.storeTokenData();
+   /* this.questionService.getAllQuestion().subscribe(
       (data) => {
         this.listQuestion = data;
         //rating
@@ -68,8 +79,21 @@ avatarColor: string = '';
         });
       }
       
-    )
-    this.questionService.getAllModules().subscribe(
+    )*/
+      setTimeout(() => {
+        this.vote.getVotesByUserAndAnswer(this.answer, this.user).subscribe(
+          (data) => {
+            this.answernaj = data;
+            console.log("answer retrieved:", this.answernaj);
+          }
+        );
+      }, 100);
+   /* this.authService.getUserByEmail(this.email).subscribe(
+      (data)=>{
+        this.userCourzelo=data
+       console.log("user microoooooooooooooooooooooooooooooooo*!!#########",this.userCourzelo)}
+    )*/
+   /* this.questionService.getAllModules().subscribe(
       (data)=>this.listModule=data
     )
     this.searchValueChangeSubscription = this.searchForm.get('searchValue')?.valueChanges
@@ -82,7 +106,7 @@ avatarColor: string = '';
     }) || new Subscription();
   this.fetchData();
 
-  this.generateRandomColor();
+  this.generateRandomColor();*/
   
     }
     
